@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+		<nav id="browse-navbar">
+			<a href="{% url 'browse' %}" id="all">
+				All
+			</a>
+			<a href="{% url 'strategy' %}" id="strategy">
+				Strategy
+			</a>
+			<a href="{% url 'content' %}" id="content">
+				Content
+			</a>
+			<a href="{% url 'misc' %}" id="misc">
+				Misc
+			</a>
+		</nav>
+
+		<div id="box-wrapper">
+			<!-- Injected Content -->
+			{% block articles %}
+				<div>
+					{% for article in articles %}
+					<div style="display:inline-block; vertical-align:top;">
+						<a href="{% url 'article_detail' article.id %}">	
+							<div class="content-box" id="{{ article.get_category_display|lower }}">
+								<span class="box-title">{{ article.title }}</span>
+								<span class="box-author">{{ article.author }}</span>
+								<span class="box-description">{{ article.description }}</span>
+							</div>
+						</a>
+					</div>
+					{% endfor %}
+				</div>
+			{% endblock %}
+		</div>
+	</div>
+{% endblock %}

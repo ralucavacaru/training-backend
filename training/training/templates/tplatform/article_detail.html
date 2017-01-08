@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h3>{{ article.title|capfirst }}</h3>
+	<p><i>{{ article.author }}</i></p>
+	<p> {{ article.content|safe }}</p>
+{% endblock %}
