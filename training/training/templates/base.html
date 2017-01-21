@@ -11,19 +11,19 @@
 		<meta charset="utf-8">
         <title>Training Platform</title>
         <meta name="description" content="">
-        <link rel="stylesheet" href="{% static 'index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
 	</head>
 
 	<body>
 		<div id="header">
 			<nav id="main-navbar">
-				<a href="{% url 'index' %}" id="home">
+				<a href="{% url 'index' %}" id="home" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
 					Home
 				</a>
-				<a href="{% url 'browse' %}" id="browse">
+				<a href="{% url 'browse' %}" id="browse" class="{% if 'browse' in request.resolver_match.url_name %}active{% endif %}">
 					Browse
 				</a>
-				<a href="{% url 'about' %}" id="about">
+				<a href="{% url 'about' %}" id="about" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">
 					About
 				</a>
 			</nav>

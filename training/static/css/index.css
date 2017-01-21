@@ -108,6 +108,28 @@ a {
 	font-family: 'Open Sans Condensed', sans-serif;
 	margin: 0;
 }
+.box-tag-list {
+	position: absolute;
+	bottom: 5px;
+}
+.box-tag {
+	font-size: 14px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: white;
+	border-radius: 4px;
+	padding: 3px;
+	margin-right: 5px;
+}
+
+#tag-strategy {
+	background-color: #558B6E;
+}
+#tag-content {
+	background-color: #648EAA;
+}
+#tag-misc {
+	background-color: #A86464;
+}
 
 /********* Browse navigation bar *********/
 
@@ -171,7 +193,7 @@ a {
 	color: white;
 }
 
-/********* Article View *********/
+/********* Article Detail View *********/
 
 .article-sidebar {
 	padding: 5px;
@@ -237,4 +259,10 @@ a {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 20px;
 	margin-top: 0;
+}
+.article-content .subtitle {
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-align: right;
+	font-style: italic;
+	font-size: 16px;
 }

@@ -1,5 +1,10 @@
 from django.db import models
 
+class Tag(models.Model):
+    name = models.CharField(max_length = 30)
+    def __unicode__(self):
+        return self.name
+
 class Article(models.Model):
     STRATEGY = 1
     CONTENT = 2
@@ -10,15 +15,10 @@ class Article(models.Model):
         (MISC, 'Misc'),
     )
 
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length = 200)
     # description = models.CharField(max_length=170)
-    author = models.CharField(max_length=50)
+    author = models.CharField(max_length = 50)
     date_added = models.DateTimeField()
     content = models.TextField()
     category = models.IntegerField(choices = CATEGORY_CHOICES)
-    # TAGS_CHOICES = (
-    #     (1, 'Tag1'),
-    #     (2, 'Tag2'),
-    #     (3, 'Tag3'),
-    # )
-    # tags = models.CharField(choices = TAGS_CHOICES)
+    tags = models.ManyToManyField(Tag)

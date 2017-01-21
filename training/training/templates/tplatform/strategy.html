@@ -4,11 +4,18 @@
 	<div>
 		{% for article in articles %}
 			<div style="display:inline-block; vertical-align:top;">
-				<a href="{% url 'article_detail' article.id %}">	
+				<a href="{% url 'browse.article_detail' article.id %}">	
 					<div class="content-box" id="{{ article.get_category_display|lower }}">
 						<span class="box-title">{{ article.title }}</span>
 						<span class="box-author">{{ article.author }}</span>
-						<span class="box-description">{{ article.description }}</span>
+						<!-- <span class="box-description">{{ article.description }}</span> -->
+						<span class="box-tag-list">
+							{% for tag in article.tags.all %}
+								<span class="box-tag">
+									{{ tag.name }}
+								</span>
+							{% endfor %}
+						</span>
 					</div>
 				</a>
 			</div>

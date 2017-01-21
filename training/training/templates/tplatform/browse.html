@@ -3,16 +3,16 @@
 {% block content %}
     <div>
 		<nav id="browse-navbar">
-			<a href="{% url 'browse' %}" id="all">
+			<a href="{% url 'browse' %}" id="all" class="{% if request.resolver_match.url_name == 'browse' %}active{% endif %}">
 				All
 			</a>
-			<a href="{% url 'strategy' %}" id="strategy">
+			<a href="{% url 'browse.strategy' %}" id="strategy" class="{% if request.resolver_match.url_name == 'browse.strategy' %}active{% endif %}">
 				Strategy
 			</a>
-			<a href="{% url 'content' %}" id="content">
+			<a href="{% url 'browse.content' %}" id="content" class="{% if request.resolver_match.url_name == 'browse.content' %}active{% endif %}">
 				Content
 			</a>
-			<a href="{% url 'misc' %}" id="misc">
+			<a href="{% url 'browse.misc' %}" id="misc" class="{% if request.resolver_match.url_name == 'browse.misc' %}active{% endif %}">
 				Misc
 			</a>
 		</nav>
@@ -23,11 +23,18 @@
 				<div>
 					{% for article in articles %}
 					<div style="display:inline-block; vertical-align:top;">
-						<a href="{% url 'article_detail' article.id %}">	
+						<a href="{% url 'browse.article_detail' article.id %}">	
 							<div class="content-box" id="{{ article.get_category_display|lower }}">
 								<span class="box-title">{{ article.title }}</span>
 								<span class="box-author">{{ article.author }}</span>
-								<span class="box-description">{{ article.description }}</span>
+								<!-- <span class="box-description">{{ article.description }}</span> -->
+								<span class="box-tag-list">
+									{% for tag in article.tags.all %}
+										<span class="box-tag" id="tag-{{ article.get_category_display|lower }}">
+											{{ tag.name }}
+										</span>
+									{% endfor %}
+								</span>
 							</div>
 						</a>
 					</div>
