@@ -5,16 +5,22 @@
 		{% for article in articles %}
 		<div style="display:inline-block; vertical-align:top;">
 			<a href="{% url 'browse.article_detail' article.id %}">	
-				<div class="content-box" id="{{ article.get_category_display|lower }}">
+				<div class="content-box" id="article-{{ article.get_category_display|lower }}">
 					<span class="box-title">{{ article.title }}</span>
 					<span class="box-author">{{ article.author }}</span>
-					<!-- <span class="box-description">{{ article.description }}</span> -->
+					<span id="tag-wrapper">
 					<span class="box-tag-list">
 						{% for tag in article.tags.all %}
 							<span class="box-tag">
 								{{ tag.name }}
 							</span>
+							{% if not forloop.last %}
+							<span class="box-tag">
+								|
+							</span>
+							{% endif %}
 						{% endfor %}
+					</span>
 					</span>
 				</div>
 			</a>
