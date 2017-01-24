@@ -83,23 +83,21 @@ a {
 	border-style: solid;
 	border-width: 5px;
 	border-radius: 3px;
-	text-align: left;
 }
 .box-title {
 	display: block;
-	font-size: 18px;
+	font-size: 24px;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-weight: bold;
 	margin: 0;
-	text-decoration: underline;
+	text-align: center;
+	margin-top: 20px;
 }
 .box-author {
 	display: block;
 	font-size: 15px;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-weight: bold;
 	margin: 0;
-	font-style: italic;
+	text-align: center;
 }
 .box-description {
 	padding-top: 10px;
@@ -109,26 +107,24 @@ a {
 	margin: 0;
 }
 .box-tag-list {
-	position: absolute;
-	bottom: 5px;
+	display: inline-block;
 }
 .box-tag {
+	display: inline;
 	font-size: 14px;
 	font-family: 'Open Sans Condensed', sans-serif;
 	color: white;
 	border-radius: 4px;
 	padding: 3px;
-	margin-right: 5px;
+	margin-right: 3px;
 }
-
-#tag-strategy {
-	background-color: #558B6E;
-}
-#tag-content {
-	background-color: #648EAA;
-}
-#tag-misc {
-	background-color: #A86464;
+#tag-wrapper {
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	display: inline;
+	bottom: 20px;
+	text-align: center;
 }
 
 /********* Browse navigation bar *********/
@@ -161,21 +157,29 @@ a {
     top: 40px !important;
 }
 
+#custom-search-options {
+	display: none;
+}
+/*#custom-search-options:hover {
+	display: block;
+}
+#custom-search-button:hover #custom-search-options {
+	display: block;
+}*/
 /*********** Sidebar Styles *************/
 
 #sidebar-strategy {
 	border-color: #558B6E;
-	color: white;
+	color: black;
 	opacity: 0.8;
 }
 #sidebar-strategy:hover, #sidebar-strategy.active {
-	background-color: #558B6E;
 	opacity: 1;
 }
 
 #sidebar-content {
 	border-color: #648EAA;
-	color: white;
+	color: black;
 	opacity: 0.8;
 }
 #sidebar-content:hover, #sidebar-content.active {
@@ -184,7 +188,7 @@ a {
 
 #sidebar-misc {
 	border-color: #A86464;
-	color: white;
+	color: black;
 	opacity: 0.8;
 }
 #sidebar-misc:hover, #sidebar-misc.active {
@@ -193,7 +197,7 @@ a {
 
 #sidebar-all {
 	border-color: #383D3B;
-	color: white;
+	color: black;
 	opacity: 0.8;
 }
 #sidebar-all:hover, #sidebar-all.active {

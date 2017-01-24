@@ -6,15 +6,28 @@
 			<a href="{% url 'browse' %}" id="sidebar-all" class="{% if request.resolver_match.url_name == 'browse' %}active{% endif %}">
 				All
 			</a>
-			<a href="{% url 'browse.strategy' %}" id="sidebar-strategy" class="{% if request.resolver_match.url_name == 'browse.strategy' %}active{% endif %}">
+			<a href="{% url 'browse.filter_detail' 'strategy' '' %}" id="sidebar-strategy" class="{% if request.resolver_match.url_name == 'browse.strategy' %}active{% endif %}">
 				Strategy
 			</a>
-			<a href="{% url 'browse.content' %}" id="sidebar-content" class="{% if request.resolver_match.url_name == 'browse.content' %}active{% endif %}">
+			<a href="{% url 'browse.filter_detail' 'content' '' %}" id="sidebar-content" class="{% if request.resolver_match.url_name == 'browse.content' %}active{% endif %}">
 				Content
 			</a>
-			<a href="{% url 'browse.misc' %}" id="sidebar-misc" class="{% if request.resolver_match.url_name == 'browse.misc' %}active{% endif %}">
+			<a href="{% url 'browse.filter_detail' 'misc' '' %}" id="sidebar-misc" class="{% if request.resolver_match.url_name == 'browse.misc' %}active{% endif %}">
 				Misc
 			</a>
+			<a id="sidebar-all" class="custom-search-button">
+				Custom Search
+			</a>
+			<span id="custom-search-options">
+				<div>
+					<ul class="custom-search">
+						<form method='post'>
+						    {{ form.as_ul }}
+						    <input type='submit' value='submit'>
+						</form>
+					</ul>
+				</div>
+			</span>
 		</nav>
 
 		<div id="box-wrapper">
