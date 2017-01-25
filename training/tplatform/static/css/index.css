@@ -325,3 +325,10 @@ a {
 	font-style: italic;
 	font-size: 16px;
 }
+
+/**************** Custom filtering ****************/
+
+.custom-search-heading {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 20px;
+}

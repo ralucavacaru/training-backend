@@ -24,36 +24,29 @@ def article_detail(request, id):
 	})
 
 def filter_detail(request, category, tags):
-	tag_list = tags.split('&')
-	# print 'Tags: ', tags, '\nTag list: ', tag_list
 	category_list = category.split('&')
 	if (tags == ''):
 		articles_by_tags = Article.objects.all()
 	else:
+		tag_list = [int(i) for i in tags.split('&')]
 		articles_by_tags = [x for x in Article.objects.all() if (set([y.id for y in x.tags.all()]) & set(tag_list))]
 	if (category_list == ''):
 		articles = articles_by_tags
 	else:
 		articles = [x for x in articles_by_tags if x.get_category_display().lower() in category_list]
+	all_tags = Tag.objects.all()
 	return render(request, 'tplatform/filter_detail.html', {
 		'articles': articles,
+		'tags': all_tags,
 	})
 
 def browse(request):
 	articles = Article.objects.all()
 	tags = Tag.objects.all()
 
-	if request.method == 'POST':
-		form = AdvancedBrowse(request.POST)
-		if form.is_valid():
-			tags = form.cleaned_data.get('tags')
-	else:
-		form = AdvancedBrowse
-
 	return render(request, 'tplatform/browse.html', {
 		'articles': articles,
 		'tags': tags,
-		'form': form,
 	})
 
 def about(request):

@@ -20,12 +20,19 @@
 			</a>
 			<span id="custom-search-options">
 				<div>
+					<h1 class="custom-search-heading">Categories</h1>
 					<ul class="custom-search">
-						<form method='post'>
-						    {{ form.as_ul }}
-						    <input type='submit' value='submit'>
-						</form>
+						<li><input type="checkbox" value="strategy" class="category-option">Strategy</li>
+						<li><input type="checkbox" value="content" class="category-option">Content</li>
+						<li><input type="checkbox" value="misc" class="category-option">Misc</li>
 					</ul>
+					<h1 class="custom-search-heading">Tags</h1>
+					<ul class="custom-search">
+						{% for tag in tags %}
+							<li><input type="checkbox" value="{{tag.id}}"class="tag-option">{{tag.name}}</li>
+						{% endfor %}
+					</ul>
+					<button id="custom-search-submit">Filter</button>
 				</div>
 			</span>
 		</nav>

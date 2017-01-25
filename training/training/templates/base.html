@@ -4,8 +4,8 @@
 <html>
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="{% static 'index.js' %}"></script>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pavanam" rel="stylesheet">
-
 		<meta charset="utf-8">
         <title>Training Platform</title>
         <meta name="description" content="">
@@ -31,13 +31,6 @@
 			<!-- Injected Content -->
 			{% block content %}
 	    	{% endblock content %}
-	    	<script>
-		    	$(document).ready(function () {	
-		    		$(".custom-search-button").click(function(){
-					    $("#custom-search-options").toggle();
-					});
-		    	});
-	    	</script>
 			</div>
 	</body>
 </html>
