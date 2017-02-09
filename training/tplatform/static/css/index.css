@@ -72,6 +72,14 @@ a {
 	float: right;
 }
 
+.content-box-wrapper {
+	position: relative;
+	display: block;
+	width: 280px;
+	height: 180px;
+	padding: 10px;
+	margin: 10px;
+}
 .content-box {
 	position: relative;
 	display: block;
@@ -102,9 +110,17 @@ a {
 .box-description {
 	padding-top: 10px;
 	display: block;
-	font-size: 15px;
+	font-size: 16px;
+	line-height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	font-style: italic;
 	font-family: 'Open Sans Condensed', sans-serif;
 	margin: 0;
+	color: white;
+}
+.box-description:hover {
+	color: white;
 }
 .box-tag-list {
 	display: inline-block;

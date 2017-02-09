@@ -42,27 +42,39 @@
 			{% block articles %}
 				<div>
 					{% for article in articles %}
-					<div style="display:inline-block; vertical-align:top;">
-						<a href="{% url 'browse.article_detail' article.id %}">	
-							<div class="content-box" id="article-{{ article.get_category_display|lower }}">
-								<span class="box-title">{{ article.title }}</span>
-								<span class="box-author">{{ article.author }}</span>
-								<span id="tag-wrapper">
-									<span class="box-tag-list">
-										{% for tag in article.tags.all %}
-											<span class="box-tag">
-												{{ tag.name }}
-											</span>
-											{% if not forloop.last %}
-											<span class="box-tag">
-												|
-											</span>
-											{% endif %}
-										{% endfor %}
+					<div class="flipper content-box-wrapper" style="display:inline-block; vertical-align:top;">
+						<!-- FRONT -->
+						<div class="front">
+							<a href="{% url 'browse.article_detail' article.id %}">	
+								<div class="content-box" id="article-{{ article.get_category_display|lower }}">
+									<span class="box-title">{{ article.title }}</span>
+									<span class="box-author">{{ article.author }}</span>
+									<span id="tag-wrapper">
+										<span class="box-tag-list">
+											{% for tag in article.tags.all %}
+												<span class="box-tag">
+													{{ tag.name }}
+												</span>
+												{% if not forloop.last %}
+												<span class="box-tag">
+													|
+												</span>
+												{% endif %}
+											{% endfor %}
+										</span>
 									</span>
-								</span>
-							</div>
-						</a>
+								</div>
+							</a>
+						</div>
+
+						<!-- BACK -->
+						<div class="back content-box" id="article-{{ article.get_category_display|lower }}">
+							<a href="{% url 'browse.article_detail' article.id %}">
+								<div class="box-description">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius convallis sapien vitae bibendum. Maecenas quis volutpat nulla. Nunc id justo nulla. Fusce hendrerit, felis vel aliquet placerat, augue dui accumsan quam, ut mattis leo nulla nec velit. Curabitur molestie turpis eu leo lacinia dictum.
+								</div>
+							</a>
+						</div>
 					</div>
 					{% endfor %}
 				</div>
