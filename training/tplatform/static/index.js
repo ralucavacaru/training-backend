@@ -1,7 +1,7 @@
 $(document).ready(function () {	
 	$(".flipper").flip({
-        trigger: 'hover'
-    });
+    	trigger: 'hover',
+	});
 
 	$(".custom-search-button").click(function(){
 	    $("#custom-search-options").toggle();
@@ -14,9 +14,10 @@ $(document).ready(function () {
 		tags =  $('.tag-option:checked').map(function() {
 		    return this.value;
 		}).get().join('&');
-		tmp = "{% url 'browse.filter_detail' '" + categories + "' '" + tags + "' %}"
+		tmp = "/browse/filter/category=" + categories + "/tags=" + tags + "/"
 		console.log(tmp);
-		document.getElementById("custom-search-submit").href=tmp; 
-    return false;
+		window.location.href = tmp;
+		// document.getElementById("custom-search-submit").href=tmp; 
+    return tmp;
 	});
 });

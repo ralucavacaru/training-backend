@@ -16,7 +16,7 @@ def article_detail(request, id):
 		article = Article.objects.get(id=id)
 	except Item.DoesNotExist:
 		raise Http404('This article does not exist')
-	# Dummy related algorithm, will be relplaced once tagging is implemented
+	# Dummy related algorithm, will be relplaced with manual related when I introduce the data
 	related = Article.objects.all()[:5]
 	return render(request, 'tplatform/article_detail.html', {
 		'article': article,
@@ -24,15 +24,15 @@ def article_detail(request, id):
 	})
 
 def filter_detail(request, category, tags):
-	category_list = category.split('&')
 	if (tags == ''):
 		articles_by_tags = Article.objects.all()
 	else:
 		tag_list = [int(i) for i in tags.split('&')]
 		articles_by_tags = [x for x in Article.objects.all() if (set([y.id for y in x.tags.all()]) & set(tag_list))]
-	if (category_list == ''):
+	if (category == ''):
 		articles = articles_by_tags
 	else:
+		category_list = category.split('&')
 		articles = [x for x in articles_by_tags if x.get_category_display().lower() in category_list]
 	all_tags = Tag.objects.all()
 	return render(request, 'tplatform/filter_detail.html', {

@@ -124,6 +124,8 @@ a {
 }
 .box-tag-list {
 	display: inline-block;
+	font-size: 14px;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 .box-tag {
 	display: inline;

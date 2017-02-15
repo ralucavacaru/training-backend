@@ -7,9 +7,9 @@
 		<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 		<script src="{% static 'index.js' %}"></script>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pavanam" rel="stylesheet">
+		<script src="https://use.fontawesome.com/cbc2c5b86f.js"></script>
 		<meta charset="utf-8">
         <title>Training Platform</title>
-        <meta name="description" content="">
         <link rel="stylesheet" href="{% static 'css/index.css' %}">
 	</head>
 
@@ -19,7 +19,7 @@
 				<a href="{% url 'index' %}" id="home" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
 					Home
 				</a>
-				<a href="{% url 'browse' %}" id="browse" class="{% if 'browse' in request.resolver_match.url_name %}active{% endif %}">
+				<a href="/browse/filter/category=/tags=/" id="browse" class="{% if 'browse' in request.resolver_match.url_name %}active{% endif %}">
 					Browse
 				</a>
 				<a href="{% url 'about' %}" id="about" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">

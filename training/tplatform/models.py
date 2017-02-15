@@ -5,6 +5,21 @@ class Tag(models.Model):
     def __unicode__(self):
         return self.name
 
+class Author(models.Model):
+    name = models.CharField(max_length = 150)
+    description = models.TextField()
+    # This is the name of the picture associated (without the extension)
+    picture_handle = models.CharField(max_length = 50)
+    def __unicode__(self):
+        return self.name
+
+class Type(models.Model):
+    name = models.CharField(max_length = 30)
+    # This is the name of the FontAwesome icon associated with the type
+    picture_handle = models.CharField(max_length = 30)
+    def __unicode__(self):
+        return self.name
+
 class Article(models.Model):
     STRATEGY = 1
     CONTENT = 2
@@ -16,9 +31,10 @@ class Article(models.Model):
     )
 
     title = models.CharField(max_length = 200)
-    # description = models.CharField(max_length=170)
-    author = models.CharField(max_length = 50)
+    description = models.CharField(max_length = 350, default = '')
+    authors = models.ManyToManyField(Author, blank = True)
     date_added = models.DateTimeField()
     content = models.TextField()
     category = models.IntegerField(choices = CATEGORY_CHOICES)
     tags = models.ManyToManyField(Tag)
+    types = models.ManyToManyField(Type, blank = True)
