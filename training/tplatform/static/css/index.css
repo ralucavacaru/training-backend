@@ -99,16 +99,18 @@ a {
 	margin: 0;
 	text-align: center;
 	margin-top: 20px;
+	/*vertical-align: middle;*/
 }
 .box-author {
 	display: block;
 	font-size: 15px;
 	font-family: 'Open Sans Condensed', sans-serif;
 	margin: 0;
+	margin-top: 5px;
 	text-align: center;
 }
 .box-description {
-	padding-top: 10px;
+	padding-top: 5px;
 	display: block;
 	font-size: 16px;
 	line-height: 1.5em;
@@ -135,6 +137,16 @@ a {
 	border-radius: 4px;
 	padding: 3px;
 	margin-right: 3px;
+}
+.box-types {
+	width: 100% !important;
+	text-align: center;
+}
+.box-types i {
+	display: inline-block;
+	padding: 10px 5px;
+	text-align: center;
+	color: white;
 }
 #tag-wrapper {
 	width: 100%;

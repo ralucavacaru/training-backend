@@ -31,6 +31,11 @@
 					<div class="box-description">
 						{{ article.description }}
 					</div>
+					<div class="box-types">
+						{% for type in article.types.all %}
+							<i class="fa fa-{{ type.picture_handle }} fa-lg"></i>
+						{% endfor %}
+					</div>
 				</a>
 			</div>
 		</div>
