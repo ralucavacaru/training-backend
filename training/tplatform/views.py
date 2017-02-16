@@ -70,8 +70,23 @@ def browse(request):
 		'tags': tags,
 	})
 
-def about(request):
-	return render(request, 'tplatform/about.html', {})
+def trainers(request):
+	trainers = Author.objects.order_by('name')
+	return render(request, 'tplatform/trainers.html', {
+		'trainers': trainers,
+	})
+
+def trainer_detail(request, id):
+	try:
+		trainer = Author.objects.get(id=id)
+	except Item.DoesNotExist:
+		raise Http404('This trainer does not exist')
+
+	articles = trainer.article_set.all()
+	return render(request, 'tplatform/trainer_detail.html', {
+		'trainer': trainer,
+		'articles': articles,
+	})
 
 def strategy(request):
 	articles = Article.objects.filter(category=Article.STRATEGY)

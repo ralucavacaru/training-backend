@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="trainers-wrapper">
+	<h1>Meet the team</h1>
+	<div class="trainers-boxes-wrapper">
+	{% for trainer in trainers %}
+		<a href="{% url 'trainers.trainer_detail' trainer.id %}">	
+			<div class="trainer-box">
+				<h2>{{ trainer.name }}</h2>
+				<div class="flipper">
+					<div class="front">
+						<img src="/static/img/{{ trainer.picture_handle }}.png">
+					</div>
+					<div class="back">
+						{{ trainer.description|safe }}
+					</div>
+				</div>
+			</div>
+		</a>
+	{% endfor %}
+	</div>
+</div>
+{% endblock content %}

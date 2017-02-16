@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="trainer-detail-wrapper">
+		<h1>{{ trainer.name }}</h1>
+		<img src="/static/img/{{ trainer.picture_handle }}.png">
+		<div class="trainer-description">
+			{{ trainer.description | safe }}
+		</div>
+		{% if articles %}
+		<div class="articles-written">
+			<h2>Articles {{trainer.name}} contributed to:</h2>
+			<ul>
+				{% for article in articles %}
+					<a href="{% url 'browse.article_detail' article.id %}">	
+						<li>{{ article.title }}</li>
+					</a>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endif %}
+	</div>
+{% endblock %}

@@ -19,45 +19,44 @@
 				Custom Search
 			</a>
 		</nav>
-		<div class="blurred"></div>
-		<div id="box-wrapper">
-			<div id="custom-search-options">
-				<i class="fa fa-times fa-lg" id="close-box"></i>
-				<div id="filter-wrapper">
-					<div class="filter-column">
-						<h1 class="custom-search-heading">Categories</h1>
-						<ul class="custom-search">
-							<li><input type="checkbox" value="strategy" class="category-option">Strategy</li>
-							<li><input type="checkbox" value="content" class="category-option">Content</li>
-							<li><input type="checkbox" value="misc" class="category-option">Misc</li>
-						</ul>
-						<h1 class="custom-search-heading" style="margin-top: 15px !important;">Types</h1>
-						<ul class="custom-search">
-							{% for type in types %}
-								<li><input type="checkbox" value="{{type.id}}"class="type-option">{{type.name|capfirst}}</li>
-							{% endfor %}
-						</ul>
-					</div>
-					<div class="filter-column">
-						<h1 class="custom-search-heading">Tags</h1>
-						<ul class="custom-search">
-							{% for tag in tags %}
-								<li><input type="checkbox" value="{{tag.id}}"class="tag-option">{{tag.name}}</li>
-							{% endfor %}
-						</ul>
-					</div>
-					<div class="filter-column">
-						<h1 class="custom-search-heading">Authors</h1>
-						<ul class="custom-search">
-							{% for author in authors %}
-								<li><input type="checkbox" value="{{author.id}}"class="author-option">{{author.name}}</li>
-							{% endfor %}
-						</ul>
-					</div>
-					
-					<button id="custom-search-submit">Filter</button>
+		<div id="custom-search-options">
+			<i class="fa fa-times fa-lg" id="close-box"></i>
+			<div id="filter-wrapper">
+				<div class="filter-column">
+					<h1 class="custom-search-heading">Categories</h1>
+					<ul class="custom-search">
+						<li><input type="checkbox" value="strategy" class="category-option">Strategy</li>
+						<li><input type="checkbox" value="content" class="category-option">Content</li>
+						<li><input type="checkbox" value="misc" class="category-option">Misc</li>
+					</ul>
+					<h1 class="custom-search-heading" style="margin-top: 15px !important;">Types</h1>
+					<ul class="custom-search">
+						{% for type in types %}
+							<li><input type="checkbox" value="{{type.id}}"class="type-option">{{type.name|capfirst}}</li>
+						{% endfor %}
+					</ul>
 				</div>
+				<div class="filter-column">
+					<h1 class="custom-search-heading">Tags</h1>
+					<ul class="custom-search">
+						{% for tag in tags %}
+							<li><input type="checkbox" value="{{tag.id}}"class="tag-option">{{tag.name}}</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="filter-column">
+					<h1 class="custom-search-heading">Authors</h1>
+					<ul class="custom-search">
+						{% for author in authors %}
+							<li><input type="checkbox" value="{{author.id}}" class="author-option">{{author.name}}</li>
+						{% endfor %}
+					</ul>
+				</div>
+				
+				<button id="custom-search-submit">Filter</button>
 			</div>
+		</div>
+		<div id="box-wrapper">
 			<!-- Injected Content -->
 			{% block articles %}
 			{% endblock %}

@@ -8,6 +8,7 @@
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="https://use.fontawesome.com/cbc2c5b86f.js"></script>
 		<script src="{% static 'index.js' %}"></script>
+		<script src="{% static 'jquery.hoverIntent.js' %}"></script>
 
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pavanam" rel="stylesheet">
 		<link rel="stylesheet" href="{% static 'css/index.css' %}">
@@ -17,6 +18,7 @@
 	</head>
 
 	<body>
+		<div class="blurred"></div>
 		<div id="header" class="scroll-then-fix">
 			<nav id="main-navbar">
 				<a href="{% url 'index' %}" id="home" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
@@ -25,8 +27,8 @@
 				<a href="/browse/filter/category=/tags=/types=/authors=/" id="browse" class="{% if 'browse' in request.resolver_match.url_name %}active{% endif %}">
 					Browse
 				</a>
-				<a href="{% url 'about' %}" id="about" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">
-					About
+				<a href="{% url 'trainers' %}" id="trainers" class="{% if 'trainers' in request.resolver_match.url_name %}active{% endif %}">
+					Trainers
 				</a>
 			</nav>
 		</div>

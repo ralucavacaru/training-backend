@@ -10,7 +10,8 @@ urlpatterns = [
 	url(r'^browse/content', views.content, name='browse.content'),
 	url(r'^browse/misc', views.misc, name='browse.misc'),
 	url(r'^browse/', views.browse, name='browse'),
-	url(r'^about/', views.about, name='about'),
+	url(r'^trainers/', views.trainers, name='trainers'),
 	url(r'^article/(?P<id>\d+)/', views.article_detail, name='browse.article_detail'),
+	url(r'^trainer/(?P<id>\d+)/', views.trainer_detail, name='trainers.trainer_detail'),
     url(r'^admin/', include(admin.site.urls)),
 ]

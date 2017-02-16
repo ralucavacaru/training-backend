@@ -1,6 +1,7 @@
 {% extends "tplatform/browse.html" %}
 
 {% block articles %}
+	{% if articles %}
 	<div>
 		{% for article in articles %}
 		<div class="flipper content-box-wrapper" style="display:inline-block; vertical-align:top;">
@@ -41,4 +42,8 @@
 		</div>
 		{% endfor %}
 	</div>
+	{% else %}
+	<h1>Oops!</h1>
+	<p> Your query has no results.</p>
+	{% endif %}
 {% endblock %}

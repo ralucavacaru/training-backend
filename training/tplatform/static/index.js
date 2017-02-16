@@ -1,7 +1,12 @@
-$(document).ready(function () {	
-	// 
+$(document).ready(function() {	
 	$(".flipper").flip({
-    	trigger: 'hover',
+    	trigger: 'manual',
+	});
+	function flipToggle(e) {
+		$(e).flip('toggle');
+	};
+	$(".flipper").hoverIntent(function () {
+		$(this).flip('toggle');
 	});
 
 	$(".custom-search-button").click(function(){
@@ -12,6 +17,11 @@ $(document).ready(function () {
 	    $("#custom-search-options").toggle();
 	    $('.blurred').toggle();
 	});
+	$(".blurred").click(function(){
+	    $("#custom-search-options").toggle();
+	    $('.blurred').toggle();
+	});
+
 
 	$("#custom-search-submit").click(function() {
 		categories = $('.category-option:checked').map(function() {
