@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div ng-controller="ArticleCtrl">
-	<div class="article-sidebar" set-class-when-at-top-browse="fix-to-top-browse">
+<div>
+	<div class="article-sidebar scroll-then-fix-sidebar">
 		<h1>Related Resources</h1>
 		<ul class="related">
 			{% for article in related %}

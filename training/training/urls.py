@@ -6,7 +6,7 @@ from tplatform import views
 urlpatterns = [
 	url(r'^$', views.index, name='index'),
 	url(r'^browse/strategy', views.strategy, name='browse.strategy'),
-	url(r'^browse/filter/category=(?P<category>(\w+&)*\w*)/tags=(?P<tags>(\d+&)*\d*)/', views.filter_detail, name='browse.filter_detail'),
+	url(r'^browse/filter/category=(?P<category>(\w+&)*\w*)/tags=(?P<tags>(\d+&)*\d*)/types=(?P<types>(\d+&)*\d*)/authors=(?P<authors>(\d+&)*\d*)/', views.filter_detail, name='browse.filter_detail'),
 	url(r'^browse/content', views.content, name='browse.content'),
 	url(r'^browse/misc', views.misc, name='browse.misc'),
 	url(r'^browse/', views.browse, name='browse'),

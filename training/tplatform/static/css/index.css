@@ -56,6 +56,18 @@ a {
     position: fixed !important;
     top: -90px !important;
 }
+.fix-to-top-sidebar {
+    position: fixed !important;
+    top: 40px !important;
+}
+#scroll-then-fix.bottom {
+    position: absolute;
+    bottom: 0;
+}
+#scroll-then-fix.top {
+    position: fixed;
+    top: 0;
+}
 
 #home, #browse, #about {
 	border-color: #383D3B;
@@ -187,20 +199,6 @@ a {
     top: 40px !important;
 }
 
-#custom-search-options {
-	display: none;
-}
-.custom-search {
-	list-style-type: none;
-	font-family: 'Open Sans Condensed', sans-serif;
-	padding: 0;
-	margin: 0;
-}
-#advanced-browse-element {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
 /*********** Sidebar Styles *************/
 
 #sidebar-strategy {
@@ -357,8 +355,89 @@ a {
 }
 
 /**************** Custom filtering ****************/
-
+#custom-search-options {
+	display: none;
+	position: absolute;
+	background-color: rgba(245, 245, 245, 1);
+	border: 2px solid black;
+	border-radius: 3px;
+	width: 50%;
+	max-height: 70%;
+	left: 25%;
+	z-index: 999;
+	overflow-y: auto;
+	padding: 20px 30px;
+	filter: none;
+}
+.custom-search {
+	list-style-type: none;
+	font-family: 'Open Sans Condensed', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+#advanced-browse-element {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
 .custom-search-heading {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 20px;
+	margin-top: 0 !important;
 }
+#filter-wrapper {
+	position: relative;
+	width: 100%;
+	text-align: justify;
+}
+#filter-wrapper:after {
+    display: inline-block;
+    width: 100%;
+    content: '';
+}
+.filter-column {
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+	/*text-align: justify;*/
+	min-width: 120px;
+}
+#custom-search-submit {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	width: 80px;
+	height: 40px;
+	border-radius: 3px;
+	border-color: #558B6E;
+	box-shadow: none;
+	background-color: #558B6E;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: white;
+	font-size: 18px;
+}
+#close-box {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: black;
+}
+.blurred {
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+  	filter: blur(5px);
+
+  	display: none;
+  	position: absolute;
+  	width: 100%;
+  	height: 100%;
+  	z-index: 888;
+  	background-color: rgba(245, 245, 245, 0.5);
+}
+
+
+
+
+

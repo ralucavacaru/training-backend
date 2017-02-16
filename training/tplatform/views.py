@@ -3,6 +3,8 @@ from django.http import Http404
 
 from tplatform.models import Article
 from tplatform.models import Tag
+from tplatform.models import Author
+from tplatform.models import Type
 from tplatform.forms import AdvancedBrowse
 
 def index(request):
@@ -23,21 +25,40 @@ def article_detail(request, id):
 		'related': related,
 	})
 
-def filter_detail(request, category, tags):
+def filter_detail(request, category, tags, types, authors):
+	# By tags:
 	if (tags == ''):
-		articles_by_tags = Article.objects.all()
+		articles = Article.objects.all()
 	else:
 		tag_list = [int(i) for i in tags.split('&')]
-		articles_by_tags = [x for x in Article.objects.all() if (set([y.id for y in x.tags.all()]) & set(tag_list))]
-	if (category == ''):
-		articles = articles_by_tags
-	else:
+		articles = [x for x in Article.objects.all() if (set([y.id for y in x.tags.all()]) & set(tag_list))]
+	
+	# By category:
+	if (category != ''):
+		aux = articles
 		category_list = category.split('&')
-		articles = [x for x in articles_by_tags if x.get_category_display().lower() in category_list]
+		articles = [x for x in aux if x.get_category_display().lower() in category_list]
+	
+	# By type:
+	if (types != ''):
+		aux = articles
+		types_list = [int(i) for i in types.split('&')]
+		articles = [x for x in aux if (set([y.id for y in x.types.all()]) & set(types_list))]
+	
+	# By author:
+	if (authors != ''):
+		aux = articles
+		authors_list = [int(i) for i in authors.split('&')]
+		articles = [x for x in aux if (set([y.id for y in x.authors.all()]) & set(authors_list))]
+	
 	all_tags = Tag.objects.all()
+	all_authors = Author.objects.all()
+	all_types = Type.objects.all();
 	return render(request, 'tplatform/filter_detail.html', {
 		'articles': articles,
 		'tags': all_tags,
+		'authors': all_authors,
+		'types': all_types,
 	})
 
 def browse(request):
