@@ -30,6 +30,9 @@
 				<a href="{% url 'trainers' %}" id="trainers" class="{% if 'trainers' in request.resolver_match.url_name %}active{% endif %}">
 					Trainers
 				</a>
+				<a href="{% url 'contact' %}" id="contact" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+					Contact Us
+				</a>
 			</nav>
 		</div>
 

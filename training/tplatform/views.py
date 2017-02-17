@@ -9,9 +9,7 @@ from tplatform.forms import AdvancedBrowse
 
 def index(request):
 	articles = Article.objects.all()
-	return render(request, 'tplatform/index.html', {
-		'articles': articles,
-	})
+	return render(request, 'tplatform/index.html')
 
 def article_detail(request, id):
 	try:
@@ -26,12 +24,13 @@ def article_detail(request, id):
 	})
 
 def filter_detail(request, category, tags, types, authors):
+	all_articles = Article.objects.all().order_by('date_added').reverse()
 	# By tags:
 	if (tags == ''):
-		articles = Article.objects.all()
+		articles = all_articles
 	else:
 		tag_list = [int(i) for i in tags.split('&')]
-		articles = [x for x in Article.objects.all() if (set([y.id for y in x.tags.all()]) & set(tag_list))]
+		articles = [x for x in all_articles if (set([y.id for y in x.tags.all()]) & set(tag_list))]
 	
 	# By category:
 	if (category != ''):
@@ -88,20 +87,5 @@ def trainer_detail(request, id):
 		'articles': articles,
 	})
 
-def strategy(request):
-	articles = Article.objects.filter(category=Article.STRATEGY)
-	return render(request, 'tplatform/strategy.html', {
-		'articles': articles,
-	})
-
-def content(request):
-	articles = Article.objects.filter(category=Article.CONTENT)
-	return render(request, 'tplatform/content.html', {
-		'articles': articles,
-	})
-
-def misc(request):
-	articles = Article.objects.filter(category=Article.MISC)
-	return render(request, 'tplatform/misc.html', {
-		'articles': articles,
-	})
+def contact(request):
+	return render(request, 'tplatform/contact_us.html')

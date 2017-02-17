@@ -3,7 +3,7 @@
 {% block content %}
 <div>
 	<div class="article-sidebar scroll-then-fix-sidebar">
-		<h1>Related Resources</h1>
+		<h1>Related</h1>
 		<ul class="related">
 			{% for article in related %}
 			<a href="{% url 'browse.article_detail' article.id %}">	
@@ -16,10 +16,27 @@
 	</div>
 
 	<div class="article-content"> 
-		<h1>{{ article.title|capfirst }}</h1>
-		<span class="subtitle">{{ article.authors.all|join:", " }}</span>
-		</br>
-		{{ article.content|safe }}
+		<div class="article-title-wrapper">
+			<h1 id="{{ article.get_category_display|lower }}">{{ article.title|capfirst }}</h1>
+			<span class="box-tag-list">
+				{{ article.tags.all|join:", " }}
+				<br><i>{{ article.date_added }}</i>
+			</span>
+		</div>
+		<div class="article-content-wrapper">
+			{{ article.content|safe }}
+		</div>
+		<div class="article-authors-wrapper">
+			<h3>Written by</h3>
+			{% for author in article.authors.all %}
+				<a href="{% url 'trainers.trainer_detail' author.id %}">
+					<div class="article-author">
+						<img src="/static/img/{{ author.picture_handle }}.png">
+						<h2>{{ author.name }}</h2>
+					</div>
+				</a>
+			{% endfor %}
+		</div>
 	</div>
 </div>
 {% endblock %}

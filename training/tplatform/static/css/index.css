@@ -1,3 +1,6 @@
+html {
+	height: 100%;
+}
 body {
 	margin: 0;
 	width: 100%;
@@ -72,10 +75,10 @@ a {
     top: 0;
 }
 
-#home, #browse, #trainers {
+#home, #browse, #trainers, #contact {
 	border-color: #383D3B;
 }
-#home:hover, #browse:hover, #trainers:hover, #home.active, #browse.active, #trainers.active {
+#home:hover, #browse:hover, #trainers:hover, #contact:hover, #home.active, #browse.active, #trainers.active, #contact.active {
 	background-color: #383D3B;
 	color: white;
 }
@@ -339,29 +342,69 @@ a {
 
 .article-content h1 {
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 30px;
+	font-size: 34px;
 	margin-top: 0;
 }
 .article-content h2 {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 26px;
-	margin-top: 0;
+	margin-top: 40px;
 }
 .article-content h3 {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 22px;
-	margin-top: 0;
+	margin-top: 15px;
 }
 .article-content h4 {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 20px;
-	margin-top: 0;
+	margin-top: 5px;
 }
 .article-content .subtitle {
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-align: right;
 	font-style: italic;
 	font-size: 16px;
+}
+.article-content-wrapper {
+	clear: left;
+	margin-top: 50px;
+}
+.article-authors-wrapper {
+	margin-top: 50px;
+	border-top: 1px solid black;
+	padding: 50px 10px 25px 10px;
+	text-align: center;
+}
+.article-author img {
+	width: 80px;
+	border-radius: 40px;
+}
+.article-author {
+	display: inline-block;
+	padding: 0px 10px 10px 10px;
+	opacity: 0.7;
+}
+.article-author:hover {
+	opacity: 1;
+}
+.article-author h2 {
+	font-size: 18px;
+	text-align: center;
+	margin-top: 0;
+}
+.article-title-wrapper .box-tag-list {
+	font-size: 16px;
+	/*text-align: center;*/
+}
+#strategy {
+	color: #558B6E;
+}
+#content {
+	color: #648EAA;
+}
+#misc {
+	color: #A86464;
 }
 
 /**************** Custom filtering ****************/
@@ -380,6 +423,7 @@ a {
 	padding: 20px 30px;
 	filter: none;
 	position: fixed;
+	overflow: scroll;
 }
 .custom-search {
 	list-style-type: none;
@@ -435,14 +479,8 @@ a {
 	color: black;
 }
 .blurred {
-	-webkit-filter: blur(5px);
-	-moz-filter: blur(5px);
-	-o-filter: blur(5px);
-	-ms-filter: blur(5px);
-  	filter: blur(5px);
-
   	display: none;
-  	position: absolute;
+  	position: fixed;
   	width: 100%;
   	height: 100%;
   	z-index: 888;
@@ -534,7 +572,6 @@ a {
 	padding: 5px;
 	text-decoration: underline;
 }
-
 .trainer-description p {
 	margin-top: 0 !important;
 }
