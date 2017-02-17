@@ -2,9 +2,9 @@
 
 {% block articles %}
 	{% if articles %}
-	<div>
+	<div class="filter-detail-wrapper">
 		{% for article in articles %}
-		<div class="flipper content-box-wrapper" style="display:inline-block; vertical-align:top;">
+		<div class="flipper content-box-wrapper">
 			<!-- FRONT -->
 			<div class="front">
 				<a href="{% url 'browse.article_detail' article.id %}">	

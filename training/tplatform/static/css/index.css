@@ -86,20 +86,25 @@ a {
 	display: inline-block;
 	float: right;
 }
-
+.filter-detail-wrapper {
+	width: 90%;
+	text-align: justify;
+}
 .content-box-wrapper {
 	position: relative;
 	display: block;
 	width: 280px;
-	height: 180px;
+	height: 200px;
 	padding: 10px;
 	margin: 10px;
+	display:inline-block;
+	vertical-align:top;
 }
 .content-box {
 	position: relative;
 	display: block;
 	width: 280px;
-	height: 180px;
+	height: 200px;
 	padding: 10px;
 	background-color: #f5f5f5;
 	margin: 10px;
@@ -153,8 +158,11 @@ a {
 	margin-right: 3px;
 }
 .box-types {
+	position: absolute;
 	width: 100% !important;
 	text-align: center;
+	left: 0;
+	bottom: 10px;
 }
 .box-types i {
 	display: inline-block;
@@ -478,6 +486,15 @@ a {
 	font-size: 22px;
 	margin-top: 0;
 	text-align: center;
+}
+.trainer-box p {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+.back-description {
+	vertical-align: middle;
+}
+.trainer-box-flippler {
+	height: 350px;
 }
 
 /********* Trainers detail page *********/
