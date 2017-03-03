@@ -37,6 +37,18 @@
 				</a>
 			{% endfor %}
 		</div>
+		<div class="mobile-related">
+			<h1>Related</h1>
+			<ul class="related">
+				{% for article in related %}
+					<a href="{% url 'browse.article_detail' article.id %}">	
+						<li id="sidebar-{{ article.get_category_display|lower }}">
+							<h2>{{ article.title|capfirst }}</h2>
+						</li>
+					</a>
+				{% endfor %}
+			</ul>
+		</div>
 	</div>
 </div>
 {% endblock %}

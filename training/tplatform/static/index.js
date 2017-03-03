@@ -22,6 +22,10 @@ $(document).ready(function() {
 	    $('.blurred').toggle();
 	});
 
+	$(".burger-icon").click(function(){
+	    $(".mobile-menu").toggle('slide', {direction: 'right'});
+	});
+
 
 	$("#custom-search-submit").click(function() {
 		categories = $('.category-option:checked').map(function() {

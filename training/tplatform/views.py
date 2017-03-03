@@ -1,15 +1,15 @@
 from django.shortcuts import render
 from django.http import Http404
+from django.template import RequestContext
 
 from tplatform.models import Article
 from tplatform.models import Tag
 from tplatform.models import Author
 from tplatform.models import Type
-from tplatform.forms import AdvancedBrowse
 
 def index(request):
 	articles = Article.objects.all()
-	return render(request, 'tplatform/index.html')
+	return render(request, 'tplatform/index.html', {}, context_instance = RequestContext(request))
 
 def article_detail(request, id):
 	try:
@@ -21,7 +21,7 @@ def article_detail(request, id):
 	return render(request, 'tplatform/article_detail.html', {
 		'article': article,
 		'related': related,
-	})
+	}, context_instance = RequestContext(request))
 
 def filter_detail(request, category, tags, types, authors):
 	all_articles = Article.objects.all().order_by('date_added').reverse()
@@ -58,22 +58,13 @@ def filter_detail(request, category, tags, types, authors):
 		'tags': all_tags,
 		'authors': all_authors,
 		'types': all_types,
-	})
-
-def browse(request):
-	articles = Article.objects.all()
-	tags = Tag.objects.all()
-
-	return render(request, 'tplatform/browse.html', {
-		'articles': articles,
-		'tags': tags,
-	})
+	}, context_instance = RequestContext(request))
 
 def trainers(request):
 	trainers = Author.objects.order_by('name')
 	return render(request, 'tplatform/trainers.html', {
 		'trainers': trainers,
-	})
+	}, context_instance = RequestContext(request))
 
 def trainer_detail(request, id):
 	try:
@@ -85,7 +76,7 @@ def trainer_detail(request, id):
 	return render(request, 'tplatform/trainer_detail.html', {
 		'trainer': trainer,
 		'articles': articles,
-	})
+	}, context_instance = RequestContext(request))
 
 def contact(request):
-	return render(request, 'tplatform/contact_us.html')
+	return render(request, 'tplatform/contact_us.html', {}, context_instance = RequestContext(request))
