@@ -217,37 +217,21 @@ a {
 #sidebar-strategy {
 	border-color: #558B6E;
 	color: black;
-	opacity: 0.8;
-}
-#sidebar-strategy:hover, #sidebar-strategy.active {
-	opacity: 1;
 }
 
 #sidebar-content {
 	border-color: #648EAA;
 	color: black;
-	opacity: 0.8;
-}
-#sidebar-content:hover, #sidebar-content.active {
-	opacity: 1;
 }
 
 #sidebar-misc {
 	border-color: #A86464;
 	color: black;
-	opacity: 0.8;
-}
-#sidebar-misc:hover, #sidebar-misc.active {
-	opacity: 1;
 }
 
 #sidebar-all {
 	border-color: #383D3B;
 	color: black;
-	opacity: 0.8;
-}
-#sidebar-all:hover, #sidebar-all.active {
-	opacity: 1;
 }
 
 
@@ -257,40 +241,24 @@ a {
 	border-color: #558B6E;
 	background-color: #558B6E;
 	color: white;
-	opacity: 0.8;
-}
-#article-strategy:hover, #article-strategy.active {
-	opacity: 1;
 }
 
 #article-content {
 	border-color: #648EAA;
 	background-color: #648EAA;
 	color: white;
-	opacity: 0.8;
-}
-#article-content:hover, #article-content.active {
-	opacity: 1;
 }
 
 #article-misc {
 	border-color: #A86464;
 	background-color: #A86464;
 	color: white;
-	opacity: 0.8;
-}
-#article-misc:hover, #article-misc.active {
-	opacity: 1;
 }
 
 #article-all {
 	border-color: #383D3B;
 	background-color: #383D3B;
 	color: white;
-	opacity: 0.8;
-}
-#article-all:hover, #article-all.active {
-	opacity: 1;
 }
 
 /********* Article Detail View *********/
@@ -489,6 +457,14 @@ a {
   	z-index: 888;
   	background-color: rgba(245, 245, 245, 0.7);
 }
+.mob-menu-blurred {
+  	display: none;
+  	position: fixed;
+  	width: 100%;
+  	height: 100%;
+  	z-index: 8;
+  	background-color: rgba(245, 245, 245, 0.7);
+}
 
 /********* Trainers Page *********/
 
@@ -512,10 +488,6 @@ a {
 	width: 300px;
 	height: 350px;
 	padding: 20px;
-	opacity: 0.8;
-}
-.trainer-box:hover {
-	opacity: 1;
 }
 .trainer-box img {
 	position: relative;
@@ -580,6 +552,7 @@ a {
 	margin-top: 0 !important;
 }
 
+
 /**************** Mobile-specific classes ****************/
 
 .mobile-menu {
@@ -598,11 +571,12 @@ a {
 }
 .mobile-menu a {
 	display: block;
-	padding: 10px 20px;
+	padding: 5px 20px;
+	margin: 5px 0;
 	/*border-bottom: 2px solid black;*/
 }
 .mobile-menu a:first-of-type {
-	margin-top: 80px;
+	margin-top: 60px;
 }
 .burger-icon {
 	padding: 10px;
@@ -611,7 +585,7 @@ a {
 	z-index: 100;
 }
 .mob-browse-option {
-	margin-left: 30px;
+	margin-left: 30px !important;
 }
 #mobile-all, .mobile-custom {
 	border-bottom: 3px solid black;
@@ -631,6 +605,7 @@ a {
 
 /**************** Media screen detection ****************/
 
+/* For most mobile devices, including tablets */
 @media screen and (max-width: 960px) {
   	#browse-navbar { 
   		display: none; 
@@ -650,10 +625,9 @@ a {
   	}
   	#custom-search-options {
   		position: fixed;
-  		/* not sure why this needs 60 and not 20... */
   		width: calc(90vw - 60px);
   		padding: 10px;
-  		max-height: 90vh;
+  		max-height: 80vh;
   		margin: 5vh 10vw;
   		left: 0; top: 0;
   		font-size: 18px;
@@ -717,14 +691,7 @@ a {
   		margin-left: calc(40vw - 150px);
   	}
 }
-@media screen and (min-width: 961px) {
-  	#box-wrapper {
-  		float: right;
-  	}
-  	.burger-icon {
-  		display: none;
-  	}
-}
+/* For smaller screens such as the iPhone 5 */
 @media screen and (max-width: 350px) {
 	.content-box {
 		width: 250px;
@@ -740,4 +707,13 @@ a {
   	.trainer-detail-wrapper img {
   		margin-left: 0;
   	}
+}
+/* Normal screen */
+@media screen and (min-width: 961px) {
+	#box-wrapper {
+		float: right;
+	}
+	.burger-icon {
+		display: none;
+	}
 }

@@ -10,20 +10,25 @@ $(document).ready(function() {
 	});
 
 	$(".custom-search-button").click(function(){
-	    $("#custom-search-options").toggle();
-	    $('.blurred').toggle();
+	    $("#custom-search-options").toggle('fade');
+	    $('.blurred').toggle('fade');
 	});
 	$("#close-box").click(function(){
-	    $("#custom-search-options").toggle();
-	    $('.blurred').toggle();
+	    $("#custom-search-options").toggle('fade');
+	    $('.blurred').toggle('fade');
 	});
 	$(".blurred").click(function(){
-	    $("#custom-search-options").toggle();
-	    $('.blurred').toggle();
+	    $("#custom-search-options").toggle('fade');
+	    $('.blurred').toggle('fade');
 	});
 
 	$(".burger-icon").click(function(){
 	    $(".mobile-menu").toggle('slide', {direction: 'right'});
+	    $('.mob-menu-blurred').toggle('fade');
+	});
+	$(".mob-menu-blurred").click(function(){
+	    $(".mobile-menu").toggle('slide', {direction: 'right'});
+	    $('.mob-menu-blurred').toggle('fade');
 	});
 
 
