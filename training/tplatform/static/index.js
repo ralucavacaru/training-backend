@@ -30,6 +30,10 @@ $(document).ready(function() {
 	    $(".mobile-menu").toggle('slide', {direction: 'right'});
 	    $('.mob-menu-blurred').toggle('fade');
 	});
+	$(".mobile-menu").on("swiperight",function(event){
+  		$(".mobile-menu").toggle('slide', {direction: 'right'});
+  		$(".mob-menu-blurred").toggle('fade');
+	});
 
 
 	$("#custom-search-submit").click(function() {
