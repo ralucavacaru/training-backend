@@ -5,7 +5,7 @@
 		<h1>{{ trainer.name }}</h1>
 		<img src="/static/img/{{ trainer.picture_handle }}.png">
 		<div class="trainer-description">
-			{{ trainer.description | safe }}
+			<p>{{ trainer.description | safe }}</p>
 		</div>
 		{% if articles %}
 		<div class="articles-written">

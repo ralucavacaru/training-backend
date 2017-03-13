@@ -6,10 +6,20 @@ class Tag(models.Model):
         return self.name
 
 class Author(models.Model):
+    CA = 1
+    DCA = 2
+    TRAINER = 3
+    STATUS = (
+        (CA, 'CA'),
+        (DCA, 'DCA'),
+        (TRAINER , 'Trainer'),
+    )
+
     name = models.CharField(max_length = 150)
     description = models.TextField()
     # This is the name of the picture associated (without the extension)
     picture_handle = models.CharField(max_length = 50)
+    status = models.IntegerField(default=3, choices = STATUS)
     def __unicode__(self):
         return self.name
 
