@@ -3,21 +3,43 @@
 {% block content %}
 <div class="trainers-wrapper">
 	<div class="trainers-boxes-wrapper">
-	{% for trainer in trainers %}
-		<a href="{% url 'trainers.trainer_detail' trainer.id %}">	
-			<div class="trainer-box">
-				<h2>{{ trainer.name }}</h2>
-				<div class="flipper trainer-box-flipper">
-					<div class="front">
-						<img src="/static/img/{{ trainer.picture_handle }}.png">
-					</div>
-					<div class="back back-description">
-						<p>{{ trainer.description|safe }}</p>
+		<h1>CA Team</h1>
+		{% for trainer in trainers %}
+			{% if trainer.status == 1 %}
+			<a href="{% url 'trainers.trainer_detail' trainer.id %}">	
+				<div class="trainer-box">
+					<h2>{{ trainer.name }}</h2>
+					<div class="flipper trainer-box-flipper">
+						<div class="front">
+							<img src="/static/img/{{ trainer.picture_handle }}.png">
+						</div>
+						<div class="back back-description">
+							<p>{{ trainer.description|safe }}</p>
+						</div>
 					</div>
 				</div>
-			</div>
-		</a>
-	{% endfor %}
+			</a>
+			{% endif %}
+		{% endfor %}
+		<br> <br>
+		<h1>Training Team</h1>
+		{% for trainer in trainers %}
+			{% if trainer.status == 3 %}
+			<a href="{% url 'trainers.trainer_detail' trainer.id %}">	
+				<div class="trainer-box">
+					<h2>{{ trainer.name }}</h2>
+					<div class="flipper trainer-box-flipper">
+						<div class="front">
+							<img src="/static/img/{{ trainer.picture_handle }}.png">
+						</div>
+						<div class="back back-description">
+							<p>{{ trainer.description|safe }}</p>
+						</div>
+					</div>
+				</div>
+			</a>
+			{% endif %}
+		{% endfor %}
 	</div>
 </div>
 {% endblock content %}

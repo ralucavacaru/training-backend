@@ -60,6 +60,10 @@
 			</div>
 		</div>
 		<div id="header" class="scroll-then-fix">
+			<div class="logo">
+				<img src="/static/img/full-logo.png">
+				<!-- <h1>Training Platform</h1> -->
+			</div>
 			<nav id="main-navbar">
 				<a href="{% url 'index' %}" id="home" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
 					Home
@@ -76,7 +80,7 @@
 			</nav>
 		</div>
 		<div id="mobile-header">
-			<!-- LOGO HERE -->
+			<img src="/static/img/mob-logo.png">
 			<div class="burger-icon">
 	    		<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
 	    	</div>

@@ -58,7 +58,7 @@ $(document).ready(function() {
 
 	var fix = $('.scroll-then-fix')
   	$(document).scroll(function() {
-		if ( $(this).scrollTop() >= 90 ){
+		if ( $(this).scrollTop() >= 115 ){
 			fix.addClass('fix-to-top')
 		} 
 		else {
@@ -68,7 +68,7 @@ $(document).ready(function() {
 
 	var fixSidebar = $('.scroll-then-fix-sidebar')
   	$(document).scroll(function() {
-		if ( $(this).scrollTop() >= 90 ) {
+		if ( $(this).scrollTop() >= 115 ) {
 			fixSidebar.addClass('fix-to-top-sidebar')
 		}
 		else {
