@@ -32,8 +32,22 @@ a {
 	position: absolute;
 	width: 100%;
 	height: 150px;
-	background-color: rgba(245, 245, 245, 0.9);
+	background-color: rgba(54, 54, 54, 0.9);
 	z-index: 900;
+
+	/*background-color: #0c001a;
+	background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");*/
+
+	/*background-color: #0c001a;
+	background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");*/
+
+/*background-color: #06030a;
+background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");*/
+
+/*background-color: #000000;
+background-image: url("https://www.transparenttextures.com/patterns/iron-grip.png");*/
+/*background-color: #000000;
+background-image: url("https://www.transparenttextures.com/patterns/rebel.png");*/
 }
 
 .logo img {
@@ -58,15 +72,15 @@ a {
 	width: 110px;
 	text-align: center;
 	text-decoration: none;
-	color: #383D3B;
+	color: rgba(245, 245, 245, 1);;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 20px;
 	font-weight: bold;
-	border-bottom-style: solid;
-	border-bottom-width: 5px;
 	padding-top: 5px;
 	margin-left: 5px;
 	border-radius: 3px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 }
 .fix-to-top {
     position: fixed !important;
@@ -89,8 +103,8 @@ a {
 	border-color: #383D3B;
 }
 #home:hover, #browse:hover, #trainers:hover, #contact:hover, #home.active, #browse.active, #trainers.active, #contact.active {
-	background-color: #383D3B;
-	color: white;
+	background-color: rgba(245, 245, 245, 1);;
+	color: #363636;
 }
 
 /********* Content boxes *********/
