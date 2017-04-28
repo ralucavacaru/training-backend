@@ -49,10 +49,8 @@ $(document).ready(function() {
 		authors =  $('.author-option:checked').map(function() {
 		    return this.value;
 		}).get().join('&');
-		tmp = "/browse/filter/category=" + categories + "/tags=" + tags + "/types=" + types + "/authors=" + authors + "/"
-		// console.log(tmp);
+		tmp = "/browse/filter/category=" + categories + "/tags=" + tags + "/types=" + types + "/authors=" + authors + "/";
 		window.location.href = tmp;
-		// document.getElementById("custom-search-submit").href=tmp; 
     return tmp;
 	});	
 

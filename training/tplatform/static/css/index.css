@@ -34,20 +34,6 @@ a {
 	height: 150px;
 	background-color: rgba(54, 54, 54, 0.9);
 	z-index: 900;
-
-	/*background-color: #0c001a;
-	background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");*/
-
-	/*background-color: #0c001a;
-	background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");*/
-
-/*background-color: #06030a;
-background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");*/
-
-/*background-color: #000000;
-background-image: url("https://www.transparenttextures.com/patterns/iron-grip.png");*/
-/*background-color: #000000;
-background-image: url("https://www.transparenttextures.com/patterns/rebel.png");*/
 }
 
 .logo img {
@@ -609,6 +595,9 @@ background-image: url("https://www.transparenttextures.com/patterns/rebel.png");
 	z-index: 100;
 	display: inline-block;
 }
+.burger-icon i {
+	color: #fff;
+}
 .mob-browse-option {
 	margin-left: 30px !important;
 }
@@ -649,7 +638,7 @@ background-image: url("https://www.transparenttextures.com/patterns/rebel.png");
 		padding: 5px;
 	}
 	#mobile-header {
-		background-color: rgba(245, 245, 245, 0.9);
+		background-color: rgba(54, 54, 54, 0.9);
 		position: fixed;
 		z-index: 9999;
 		width: 100%;
@@ -666,7 +655,8 @@ background-image: url("https://www.transparenttextures.com/patterns/rebel.png");
   		padding: 10px;
   		max-height: 80vh;
   		margin: 5vh 10vw;
-  		left: 0; top: 0;
+  		left: 0; 
+  		top: 30px;
   		font-size: 18px;
   	}
   	.article-sidebar {
@@ -727,6 +717,10 @@ background-image: url("https://www.transparenttextures.com/patterns/rebel.png");
   		max-width: 300px;
   		margin-left: calc(40vw - 150px);
   	}
+  	#home:hover, #browse:hover, #trainers:hover, #contact:hover, #home.active, #browse.active, #trainers.active, #contact.active {
+	    background-color: rgba(54, 54, 54, 0.9);
+	    color: #f4f3f4;
+	}
 }
 /* For smaller screens such as the iPhone 5 */
 @media screen and (max-width: 350px) {
