@@ -1,14 +1,19 @@
 $(document).ready(function() {	
+
+	// flipping UI boxes
 	$(".flipper").flip({
     	trigger: 'manual',
 	});
 	function flipToggle(e) {
 		$(e).flip('toggle');
 	};
+
+	// hoverIntent for UI boxes
 	$(".flipper").hoverIntent(function () {
 		$(this).flip('toggle');
 	});
 
+	// custom search
 	$(".custom-search-button").click(function(){
 	    $("#custom-search-options").toggle('fade');
 	    $('.blurred').toggle('fade');
@@ -22,6 +27,7 @@ $(document).ready(function() {
 	    $('.blurred').toggle('fade');
 	});
 
+	// mobile menu
 	$(".burger-icon").click(function(){
 	    $(".mobile-menu").toggle('slide', {direction: 'right'});
 	    $('.mob-menu-blurred').toggle('fade');
@@ -35,7 +41,7 @@ $(document).ready(function() {
   		$(".mob-menu-blurred").toggle('fade');
 	});
 
-
+	// custom search URL build-up
 	$("#custom-search-submit").click(function() {
 		categories = $('.category-option:checked').map(function() {
 		    return this.value;
@@ -54,6 +60,7 @@ $(document).ready(function() {
     return tmp;
 	});	
 
+	// scroll-then-fix for navigation bar and sidebars
 	var fix = $('.scroll-then-fix')
   	$(document).scroll(function() {
 		if ( $(this).scrollTop() >= 115 ){

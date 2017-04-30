@@ -64,6 +64,7 @@ class ArticleDetailViewTest(DataSetUp):
 		resp = self.client.get(reverse('browse.article_detail', args=[1]))
 		self.assertEqual(resp.context['article'].id, 1)
 
+
 class FilterDetailViewTest(DataSetUp):
 	def test_view_url_by_name(self):
 		resp = self.client.get(reverse('browse.filter_detail', args=['1', '1', '1', '1']))
@@ -73,10 +74,6 @@ class FilterDetailViewTest(DataSetUp):
 		resp = self.client.get(reverse('browse.filter_detail', args=['1', '1', '1', '1']))
 		self.assertTemplateUsed(resp, 'tplatform/filter_detail.html')
 
-	# def test_view_returns_correct_context(self):
-	# 	resp = self.client.get(reverse('browse.filter_detail', args=['strategy', '1', '1', '1']))
-	# 	expected_articles = Article.objects.filter(category=1, types__id=1, tags__id=1, authors__id=1)
-	# 	self.assertEqual(resp.context['articles'], expected_articles)
 
 class TrainersViewTest(DataSetUp):
 	def test_view_url_by_name(self):
@@ -92,6 +89,7 @@ class TrainersViewTest(DataSetUp):
 		expected_trainers = Author.objects.all()
 		self.assertQuerysetEqual(resp.context['trainers'], [repr(x) for x in expected_trainers])
 
+
 class TrainerDetailViewTest(DataSetUp):
 	def test_view_url_by_name(self):
 		resp = self.client.get(reverse('trainers.trainer_detail', args=[1]))
@@ -104,6 +102,7 @@ class TrainerDetailViewTest(DataSetUp):
 	def test_view_returns_correct_context(self):
 		resp = self.client.get(reverse('trainers.trainer_detail', args=[1]))
 		self.assertEqual(resp.context['trainer'].id, 1)
+
 
 class ContactViewTest(DataSetUp):
 	def test_view_url_by_name(self):
