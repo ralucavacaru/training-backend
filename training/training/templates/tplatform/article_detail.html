@@ -27,7 +27,7 @@
 			{{ article.content|safe }}
 		</div>
 		<div class="article-authors-wrapper">
-			<h3>Written by</h3>
+			<h3>Author(s)</h3>
 			{% for author in article.authors.all %}
 				<a href="{% url 'trainers.trainer_detail' author.id %}">
 					<div class="article-author">

@@ -327,7 +327,6 @@ a {
 .article-content h2 {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 26px;
-	margin-top: 40px;
 }
 .article-content h3 {
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -344,6 +343,14 @@ a {
 	text-align: right;
 	font-style: italic;
 	font-size: 16px;
+}
+.article-content a {
+	color: blue;
+	text-decoration: underline;
+}
+.article-authors-wrapper a {
+	color: black;
+	text-decoration: none;
 }
 .article-content-wrapper {
 	clear: left;
@@ -751,3 +758,12 @@ a {
 		display: none;
 	}
 }
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+

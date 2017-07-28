@@ -48,3 +48,9 @@ class Article(models.Model):
     category = models.IntegerField(choices = CATEGORY_CHOICES)
     tags = models.ManyToManyField(Tag)
     types = models.ManyToManyField(Type, blank = True)
+    related_articles = models.ManyToManyField('self', symmetrical = False, blank = True)
+
+    def __unicode__(self):
+        return self.title
+
+    

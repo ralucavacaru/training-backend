@@ -16,8 +16,7 @@ def article_detail(request, id):
 		article = Article.objects.get(id=id)
 	except Item.DoesNotExist:
 		raise Http404('This article does not exist')
-	# Dummy related algorithm
-	related = Article.objects.all()[:5]
+	related = article.related_articles.all()
 	return render(request, 'tplatform/article_detail.html', {
 		'article': article,
 		'related': related,
