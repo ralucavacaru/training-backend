@@ -9,10 +9,12 @@ class Author(models.Model):
     CA = 1
     DCA = 2
     TRAINER = 3
+    CONTRIBUTOR = 4
     STATUS = (
         (CA, 'CA'),
         (DCA, 'DCA'),
-        (TRAINER , 'Trainer'),
+        (TRAINER, 'Trainer'),
+        (CONTRIBUTOR, 'Contributor'),
     )
 
     name = models.CharField(max_length = 150)

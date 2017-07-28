@@ -49,9 +49,9 @@ def filter_detail(request, category, tags, types, authors):
 		authors_list = [int(i) for i in authors.split('&')]
 		articles = [x for x in aux if (set([y.id for y in x.authors.all()]) & set(authors_list))]
 	
-	all_tags = Tag.objects.all()
-	all_authors = Author.objects.all()
-	all_types = Type.objects.all();
+	all_tags = Tag.objects.all().order_by('name')
+	all_authors = Author.objects.all().order_by('name')
+	all_types = Type.objects.all().order_by('name');
 	return render(request, 'tplatform/filter_detail.html', {
 		'articles': articles,
 		'tags': all_tags,

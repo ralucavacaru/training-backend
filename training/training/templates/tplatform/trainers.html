@@ -21,10 +21,47 @@
 			</a>
 			{% endif %}
 		{% endfor %}
-		<br> <br>
+		<br>
+		{% for trainer in trainers %}
+			{% if trainer.status == 2 %}
+			<a href="{% url 'trainers.trainer_detail' trainer.id %}">	
+				<div class="trainer-box">
+					<h2>{{ trainer.name }}</h2>
+					<div class="flipper trainer-box-flipper">
+						<div class="front">
+							<img src="/static/img/{{ trainer.picture_handle }}.png">
+						</div>
+						<div class="back back-description">
+							<p>{{ trainer.description|safe }}</p>
+						</div>
+					</div>
+				</div>
+			</a>
+			{% endif %}
+		{% endfor %}
+		<br> <br> <br> <br>
 		<h1>Training Team</h1>
 		{% for trainer in trainers %}
 			{% if trainer.status == 3 %}
+			<a href="{% url 'trainers.trainer_detail' trainer.id %}">	
+				<div class="trainer-box">
+					<h2>{{ trainer.name }}</h2>
+					<div class="flipper trainer-box-flipper">
+						<div class="front">
+							<img src="/static/img/{{ trainer.picture_handle }}.png">
+						</div>
+						<div class="back back-description">
+							<p>{{ trainer.description|safe }}</p>
+						</div>
+					</div>
+				</div>
+			</a>
+			{% endif %}
+		{% endfor %}
+		<br> <br> <br> <br>
+		<h1>Contributors</h1>
+		{% for trainer in trainers %}
+			{% if trainer.status == 4 %}
 			<a href="{% url 'trainers.trainer_detail' trainer.id %}">	
 				<div class="trainer-box">
 					<h2>{{ trainer.name }}</h2>

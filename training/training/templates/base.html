@@ -20,104 +20,106 @@
 	</head>
 
 	<body>
-		<div class="blurred"></div>
-		<div class="mob-menu-blurred"></div>
-		<div id="custom-search-options">
-			<i class="fa fa-times fa-lg" id="close-box"></i>
-			<div id="filter-wrapper">
-				<div class="filter-column">
-					<h1 class="custom-search-heading">Categories</h1>
-					<ul class="custom-search">
-						<li><input type="checkbox" value="strategy" class="category-option">Strategy</li>
-						<li><input type="checkbox" value="content" class="category-option">Content</li>
-						<li><input type="checkbox" value="misc" class="category-option">Misc</li>
-					</ul>
-					<h1 class="custom-search-heading" style="margin-top: 15px !important;">Types</h1>
-					<ul class="custom-search">
-						{% for type in types %}
-							<li><input type="checkbox" value="{{type.id}}"class="type-option">{{type.name|capfirst}}</li>
-						{% endfor %}
-					</ul>
+		<div class="everything-wrapper">
+			<div class="blurred"></div>
+			<div class="mob-menu-blurred"></div>
+			<div id="custom-search-options">
+				<i class="fa fa-times fa-lg" id="close-box"></i>
+				<div id="filter-wrapper">
+					<div class="filter-column">
+						<h1 class="custom-search-heading">Categories</h1>
+						<ul class="custom-search">
+							<li><input type="checkbox" value="strategy" class="category-option">Strategy</li>
+							<li><input type="checkbox" value="content" class="category-option">Content</li>
+							<li><input type="checkbox" value="misc" class="category-option">Misc</li>
+						</ul>
+						<h1 class="custom-search-heading" style="margin-top: 15px !important;">Types</h1>
+						<ul class="custom-search">
+							{% for type in types %}
+								<li><input type="checkbox" value="{{type.id}}"class="type-option">{{type.name|capfirst}}</li>
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="filter-column">
+						<h1 class="custom-search-heading">Tags</h1>
+						<ul class="custom-search">
+							{% for tag in tags %}
+								<li><input type="checkbox" value="{{tag.id}}"class="tag-option">{{tag.name}}</li>
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="filter-column">
+						<h1 class="custom-search-heading">Authors</h1>
+						<ul class="custom-search">
+							{% for author in authors %}
+								<li><input type="checkbox" value="{{author.id}}" class="author-option">{{author.name}}</li>
+							{% endfor %}
+						</ul>
+					</div>
+					
+					<button id="custom-search-submit">Filter</button>
 				</div>
-				<div class="filter-column">
-					<h1 class="custom-search-heading">Tags</h1>
-					<ul class="custom-search">
-						{% for tag in tags %}
-							<li><input type="checkbox" value="{{tag.id}}"class="tag-option">{{tag.name}}</li>
-						{% endfor %}
-					</ul>
-				</div>
-				<div class="filter-column">
-					<h1 class="custom-search-heading">Authors</h1>
-					<ul class="custom-search">
-						{% for author in authors %}
-							<li><input type="checkbox" value="{{author.id}}" class="author-option">{{author.name}}</li>
-						{% endfor %}
-					</ul>
-				</div>
-				
-				<button id="custom-search-submit">Filter</button>
 			</div>
-		</div>
-		<div id="header" class="scroll-then-fix">
-			<div class="logo">
-				<img src="/static/img/full-logo-white.png">
-				<!-- <h1>Training Platform</h1> -->
+			<div id="header" class="scroll-then-fix">
+				<div class="logo">
+					<img src="/static/img/full-logo-white.png">
+					<!-- <h1>Training Platform</h1> -->
+				</div>
+				<nav id="main-navbar">
+					<a href="{% url 'index' %}" id="home" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+						Home
+					</a>
+					<a href="/browse/filter/category=/tags=/types=/authors=/" id="browse" class="{% if 'browse' in request.resolver_match.url_name %}active{% endif %}">
+						Browse
+					</a>
+					<a href="{% url 'trainers' %}" id="trainers" class="{% if 'trainers' in request.resolver_match.url_name %}active{% endif %}">
+						Trainers
+					</a>
+					<a href="{% url 'contact' %}" id="contact" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+						Contact Us
+					</a>
+				</nav>
 			</div>
-			<nav id="main-navbar">
-				<a href="{% url 'index' %}" id="home" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
-					Home
-				</a>
-				<a href="/browse/filter/category=/tags=/types=/authors=/" id="browse" class="{% if 'browse' in request.resolver_match.url_name %}active{% endif %}">
-					Browse
-				</a>
-				<a href="{% url 'trainers' %}" id="trainers" class="{% if 'trainers' in request.resolver_match.url_name %}active{% endif %}">
-					Trainers
-				</a>
-				<a href="{% url 'contact' %}" id="contact" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
-					Contact Us
-				</a>
-			</nav>
-		</div>
-		<div id="mobile-header">
-			<img src="/static/img/mob-logo.png">
-			<div class="burger-icon">
-	    		<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-	    	</div>
-		</div>
-		<nav class="mobile-menu"> 
-	    		<a href="{% url 'index' %}" id="home" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
-					Home
-				</a>
-				<a href="/browse/filter/category=/tags=/types=/authors=/" id="browse" class="{% if 'browse' in request.resolver_match.url_name %}active{% endif %}">
-					Browse
-				</a>
-					<a href="/browse/filter/category=/tags=/types=/authors=/" id="mobile-all" class="mob-browse-option">
-					All
+			<div id="mobile-header">
+				<img src="/static/img/mob-logo.png">
+				<div class="burger-icon">
+		    		<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+		    	</div>
+			</div>
+			<nav class="mobile-menu"> 
+		    		<a href="{% url 'index' %}" id="home" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+						Home
 					</a>
-					<a href="{% url 'browse.filter_detail' 'strategy' '' '' '' %}" id="mobile-strategy" class="mob-browse-option">
-						Strategy
+					<a href="/browse/filter/category=/tags=/types=/authors=/" id="browse" class="{% if 'browse' in request.resolver_match.url_name %}active{% endif %}">
+						Browse
 					</a>
-					<a href="{% url 'browse.filter_detail' 'content' '' '' '' %}" id="mobile-content" class="mob-browse-option">
-						Content
+						<a href="/browse/filter/category=/tags=/types=/authors=/" id="mobile-all" class="mob-browse-option">
+						All
+						</a>
+						<a href="{% url 'browse.filter_detail' 'strategy' '' '' '' %}" id="mobile-strategy" class="mob-browse-option">
+							Strategy
+						</a>
+						<a href="{% url 'browse.filter_detail' 'content' '' '' '' %}" id="mobile-content" class="mob-browse-option">
+							Content
+						</a>
+						<a href="{% url 'browse.filter_detail' 'misc' '' '' '' %}" id="mobile-misc" class="mob-browse-option">
+							Misc
+						</a>
+						<a id="sidebar-all" class="custom-search-button mob-browse-option mobile-custom">
+							Custom Search
+						</a>
+					<a href="{% url 'trainers' %}" id="trainers" class="{% if 'trainers' in request.resolver_match.url_name %}active{% endif %}">
+						Trainers
 					</a>
-					<a href="{% url 'browse.filter_detail' 'misc' '' '' '' %}" id="mobile-misc" class="mob-browse-option">
-						Misc
+					<a href="{% url 'contact' %}" id="contact" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+						Contact Us
 					</a>
-					<a id="sidebar-all" class="custom-search-button mob-browse-option mobile-custom">
-						Custom Search
-					</a>
-				<a href="{% url 'trainers' %}" id="trainers" class="{% if 'trainers' in request.resolver_match.url_name %}active{% endif %}">
-					Trainers
-				</a>
-				<a href="{% url 'contact' %}" id="contact" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
-					Contact Us
-				</a>
-		    </nav>
-		<div id="website-content">
-			<!-- Injected Content -->
-			{% block content %}
-	    	{% endblock content %}
+			    </nav>
+			<div id="website-content">
+				<!-- Injected Content -->
+				{% block content %}
+		    	{% endblock content %}
+			</div>
 		</div>
 	</body>
 </html>
