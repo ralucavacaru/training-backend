@@ -766,3 +766,58 @@ a {
     height: 0;
     overflow: hidden;
 }
+
+/* Home page theme */
+
+.green-background {
+	background-color: #558B6E;
+}
+.green-border {
+	border: solid 4px;
+	border-color: #558B6E;
+}
+.red-background {
+	background-color: #A86464;
+}
+.red-border {
+	border: solid 4px;
+	border-color: #A86464;
+}
+.blue-background {
+	background-color: #648EAA;
+}
+.blue-border {
+	border: solid 4px;
+	border-color: #648EAA;
+}
+
+/* Home page */
+
+.homepage-wrapper a {
+	color: blue !important;
+	text-decoration: none;
+}
+
+.homepage-wrapper {
+	text-align: center;
+	position: absolute;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    left: 0;
+}
+
+.homepage-card {
+	display: flex;
+	margin: 10px 0;
+}
+
+.homepage-title-card {
+	color: white;
+}
+
+.homepage-content-card {
+
+}
+
+
