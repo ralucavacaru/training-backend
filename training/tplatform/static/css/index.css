@@ -794,11 +794,12 @@ a {
 /* Home page */
 
 .homepage-wrapper a {
-	color: blue !important;
+	color: #648EAA;
 	text-decoration: none;
 }
 
 .homepage-wrapper {
+	top: 150px;
 	text-align: center;
 	position: absolute;
     width: 100%;
@@ -807,17 +808,12 @@ a {
     left: 0;
 }
 
-.homepage-card {
-	display: flex;
-	margin: 10px 0;
-}
-
-.homepage-title-card {
+.homepage-welcome-card {
+	background-image: url('../img/scotland-blurred-50.png');
 	color: white;
+	padding: 10% 20%;
 }
-
-.homepage-content-card {
-
+.homepage-welcome-card p {
+	font-size: 18px;
 }
-
 

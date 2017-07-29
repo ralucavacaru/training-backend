@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div id="website-content">
 	<div class="trainer-detail-wrapper">
 		<h1>{{ trainer.name }}</h1>
 		<img src="/static/img/{{ trainer.picture_handle }}.png">
@@ -20,4 +21,5 @@
 		</div>
 		{% endif %}
 	</div>
+</div>
 {% endblock %}
