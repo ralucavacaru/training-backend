@@ -772,23 +772,12 @@ a {
 .green-background {
 	background-color: #558B6E;
 }
-.green-border {
-	border: solid 4px;
-	border-color: #558B6E;
-}
 .red-background {
 	background-color: #A86464;
 }
-.red-border {
-	border: solid 4px;
-	border-color: #A86464;
-}
 .blue-background {
 	background-color: #648EAA;
-}
-.blue-border {
-	border: solid 4px;
-	border-color: #648EAA;
+	color: white;
 }
 
 /* Home page */
@@ -807,11 +796,12 @@ a {
     margin: 0;
     left: 0;
 }
-
+.homepage-card {
+	padding: 10% 20%;
+}
 .homepage-welcome-card {
 	background-image: url('../img/scotland-blurred-50.png');
 	color: white;
-	padding: 10% 20%;
 }
 .homepage-welcome-card p {
 	font-size: 18px;
