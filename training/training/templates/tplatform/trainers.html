@@ -3,6 +3,10 @@
 {% block content %}
 <div id="website-content">
 <div class="trainers-wrapper">
+	<div class="trainers-description">
+		<p>Our training team consists of some of the best debaters, judges and trainers in Europe and across the world. We’re excited to have such a talented group of people in our team and joining our mission and commitment to bring debating to every corner of Europe!
+		<br><br>We are always keen to welcome new members to join the training team. If you want to help us, go to <a href="{% url 'contact' %}">our contact page</a>. We are always looking for new faces and talent!</p>
+	</div>
 	<div class="trainers-boxes-wrapper">
 		<h1>CA Team</h1>
 		{% for trainer in trainers %}

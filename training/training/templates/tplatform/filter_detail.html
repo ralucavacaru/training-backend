@@ -3,10 +3,9 @@
 	{% if articles %}
 	<div class="filter-detail-wrapper">
 		{% for article in articles %}
-		<div class="flipper content-box-wrapper">
+		<a class="flipper content-box-wrapper" href="{% url 'browse.article_detail' article.id %}">
 			<!-- FRONT -->
 			<div class="front">
-				<a href="{% url 'browse.article_detail' article.id %}">	
 					<div class="content-box" id="article-{{ article.get_category_display|lower }}">
 						<span class="box-title">{{ article.title }}</span>
 						<span class="box-author">
@@ -22,12 +21,10 @@
 							</span>
 						</span>
 					</div>
-				</a>
 			</div>
 
 			<!-- BACK -->
 			<div class="back content-box" id="article-{{ article.get_category_display|lower }}">
-				<a href="{% url 'browse.article_detail' article.id %}">
 					<div class="box-description">
 						{{ article.description }}
 					</div>
@@ -36,9 +33,8 @@
 							<i class="fa fa-{{ type.picture_handle }} fa-lg"></i>
 						{% endfor %}
 					</div>
-				</a>
 			</div>
-		</div>
+		</a>
 		{% endfor %}
 	</div>
 	{% else %}

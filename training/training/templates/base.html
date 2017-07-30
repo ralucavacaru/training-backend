@@ -61,10 +61,10 @@
 				</div>
 			</div>
 			<div id="header" class="scroll-then-fix">
-				<div class="logo">
+				<a class="logo" href="{% url 'index' %}">
 					<img src="/static/img/full-logo-white.png">
 					<!-- <h1>Training Platform</h1> -->
-				</div>
+				</a>
 				<nav id="main-navbar">
 					<a href="{% url 'index' %}" id="home" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
 						Home

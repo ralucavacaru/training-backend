@@ -488,6 +488,21 @@ a {
 .trainers-wrapper {
 	width: 100%;
 }
+.trainers-description {
+	width: 100%;
+	text-align: center;
+	padding: 0 0 30px;
+}
+.trainers-description p {
+	display: inline-block;
+	font-size: 18px;
+	text-align: center;
+	max-width: 500px;
+}
+.trainers-description a {
+	color: #648EAA;
+	text-decoration: none;
+}
 .trainers-wrapper h1 {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 30px;
@@ -789,7 +804,7 @@ a {
 /* Home page */
 
 .homepage-wrapper a {
-	color: #648EAA;
+	color: #dddbde;
 	text-decoration: none;
 }
 
