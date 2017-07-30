@@ -60,28 +60,32 @@
 					<button id="custom-search-submit">Filter</button>
 				</div>
 			</div>
-			<div id="header" class="scroll-then-fix">
-				<a class="logo" href="{% url 'index' %}">
-					<img src="/static/img/full-logo-white.png">
-					<!-- <h1>Training Platform</h1> -->
-				</a>
-				<nav id="main-navbar">
-					<a href="{% url 'index' %}" id="home" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
-						Home
+			<div class="header-placeholder">
+				<div id="header" class="scroll-then-fix">
+					<a class="logo" href="{% url 'index' %}">
+						<img src="/static/img/full-logo-white.png">
+						<!-- <h1>Training Platform</h1> -->
 					</a>
-					<a href="/browse/filter/category=/tags=/types=/authors=/" id="browse" class="{% if 'browse' in request.resolver_match.url_name %}active{% endif %}">
-						Browse
-					</a>
-					<a href="{% url 'trainers' %}" id="trainers" class="{% if 'trainers' in request.resolver_match.url_name %}active{% endif %}">
-						Trainers
-					</a>
-					<a href="{% url 'contact' %}" id="contact" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
-						Contact Us
-					</a>
-				</nav>
+					<nav id="main-navbar">
+						<a href="{% url 'index' %}" id="home" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+							Home
+						</a>
+						<a href="/browse/filter/category=/tags=/types=/authors=/" id="browse" class="{% if 'browse' in request.resolver_match.url_name %}active{% endif %}">
+							Browse
+						</a>
+						<a href="{% url 'trainers' %}" id="trainers" class="{% if 'trainers' in request.resolver_match.url_name %}active{% endif %}">
+							Trainers
+						</a>
+						<a href="{% url 'contact' %}" id="contact" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+							Contact Us
+						</a>
+					</nav>
+				</div>
 			</div>
 			<div id="mobile-header">
-				<img src="/static/img/mob-logo.png">
+				<a href="{% url 'index' %}">
+					<img src="/static/img/mob-logo.png">
+				</a>
 				<div class="burger-icon">
 		    		<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
 		    	</div>
@@ -115,20 +119,14 @@
 						Contact Us
 					</a>
 			    </nav>
-			<!-- <div id="website-content"> -->
 				<!-- Injected Content -->
 				{% block content %}
 		    	{% endblock content %}
-			<!-- </div> -->
 		</div>
-		<div id="js-heightControl" style="height: 0;">&nbsp;</div>
-		<script>
-		    $(function(){
-		        $('#js-heightControl').css('height', $(window).height() - $('html').height() +'px');
-		    });
-		</script>
 		<div class="footer">
-			Copyright Raluca-Ioana Vacaru, 2017
+				&copy; 2017 Raluca-Ioana Vacaru 
+				<br>
+				File a bug | Feature request
 		</div>
 	</body>
 </html>
