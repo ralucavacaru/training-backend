@@ -771,12 +771,18 @@ a {
 
 .green-background {
 	background-color: #558B6E;
+	color: white;
 }
 .red-background {
 	background-color: #A86464;
+	color: white;
 }
 .blue-background {
 	background-color: #648EAA;
+	color: white;
+}
+.grey-background {
+	background-color: rgba(54, 54, 54, 0.9);
 	color: white;
 }
 
@@ -798,6 +804,7 @@ a {
 }
 .homepage-card {
 	padding: 10% 20%;
+	font-size: 18px;
 }
 .homepage-welcome-card {
 	background-image: url('../img/scotland-blurred-50.png');
@@ -806,4 +813,8 @@ a {
 .homepage-welcome-card p {
 	font-size: 18px;
 }
-
+.attention {
+	font-weight: bold;
+	font-size: 24px;
+	color: red;
+}
