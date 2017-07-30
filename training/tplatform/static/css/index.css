@@ -833,3 +833,20 @@ a {
 	font-size: 24px;
 	color: red;
 }
+
+/* Footer */
+
+/*.footer {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: white;
+	background-color: rgba(54, 54, 54, 0.9);
+	font-family: 'Open Sans Condensed', sans-serif;
+}*/
+
+footer {
+    width: 100%;
+	background-color: rgba(54, 54, 54, 0.9);
+
+}

@@ -121,5 +121,14 @@
 		    	{% endblock content %}
 			<!-- </div> -->
 		</div>
+		<div id="js-heightControl" style="height: 0;">&nbsp;</div>
+		<script>
+		    $(function(){
+		        $('#js-heightControl').css('height', $(window).height() - $('html').height() +'px');
+		    });
+		</script>
+		<div class="footer">
+			Copyright Raluca-Ioana Vacaru, 2017
+		</div>
 	</body>
 </html>
