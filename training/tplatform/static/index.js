@@ -80,5 +80,10 @@ $(document).ready(function() {
 			fixSidebar.removeClass('fix-to-top-sidebar')
 		}
 	})
+
+	var fixed = document.getElementById('custom-search-options');
+	fixed.addEventListener('touchmove', function(e) {
+	        e.preventDefault();
+	}, false);
 });
 
