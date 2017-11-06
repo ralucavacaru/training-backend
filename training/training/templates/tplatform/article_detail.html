@@ -18,7 +18,7 @@
 
 	<div class="article-content"> 
 		<div class="article-title-wrapper">
-			<h1 id="{{ article.get_category_display|lower }}">{{ article.title|capfirst }}</h1>
+			<h1 class="article-title" id="{{ article.get_category_display|lower }}">{{ article.title|capfirst }}</h1>
 			<span class="box-tag-list">
 				{{ article.tags.all|join:", " }}
 				<br><i>{{ article.date_added }}</i>

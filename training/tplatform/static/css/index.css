@@ -322,11 +322,17 @@ a {
 	padding: 0px 90px;
 }
 
-.article-content h1 {
+.article-content h1.article-title {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 34px;
 	line-height: 1em;
 	margin-top: 0;
+}
+.article-content h1 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 30px;
+	line-height: 1em;
+	margin-top: 40px;
 }
 .article-content h2 {
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -339,7 +345,7 @@ a {
 }
 .article-content h4 {
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 20px;
+	font-size: 18px;
 	margin-top: 5px;
 }
 .article-content .subtitle {
@@ -442,11 +448,13 @@ a {
     content: '';
 }
 .filter-column {
-	display: inline-block;
+	/*display: inline-block;*/
 	vertical-align: top;
 	padding: 10px;
-	/*text-align: justify;*/
 	min-width: 120px;
+}
+.custom-search li {
+	display: inline-block;
 }
 #custom-search-submit {
 	position: absolute;
