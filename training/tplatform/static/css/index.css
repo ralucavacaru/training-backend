@@ -406,7 +406,7 @@ a {
 /**************** Custom filtering ****************/
 
 #custom-search-options {
-	/*display: none;*/
+	display: none;
 	position: absolute;
 	background-color: rgba(210, 210, 210, 0.95);
 	width: 100%;
@@ -727,16 +727,43 @@ input[type="checkbox"]:checked+span {
   		overflow-y: scroll;
   		border: none;
   	}
+  	.filter-icon {
+  		margin-right: 8px;
+  	}
+  	.filter-icon.fa-plus-square-o {
+  		display: inline-block;
+  	}
+  	.filter-icon.fa-minus-square-o {
+  		display: inline-block;
+  	}
+  	.filter-column {
+  		text-align: left;
+  	}
+  	.custom-search-heading {
+  		text-align: left;
+  	}
+  	.filter-column:last-of-type {
+  		margin-bottom: 60px;
+  	}
   	#close-box {
   		position: fixed;
 		top: 54px;
 		margin-top: 15px;
-		right: 15px;
+		left: 15px;
   	}
   	#custom-search-submit {
 		position: fixed;
-		margin: 15px;
+		margin: 0;
+		bottom: 25px;
+		right: 25px;
 	}
+	.filter-column {
+		display: block;
+	}
+	.custom-search {
+		display: none;
+	}
+
   	.article-sidebar {
   		display: none;
   	}
@@ -767,6 +794,7 @@ input[type="checkbox"]:checked+span {
   		padding: 10px;
   		margin: 0;
   		text-align: center;
+  		text-decoration: none !important;
   	}
   	.mobile-related .related {
   		display: inline-block;
@@ -826,6 +854,9 @@ input[type="checkbox"]:checked+span {
 		display: none;
 	}
 	#mobile-header {
+		display: none;
+	}
+	.filter-icon {
 		display: none;
 	}
 }

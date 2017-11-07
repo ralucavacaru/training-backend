@@ -31,24 +31,27 @@
 				</h1>
 				<div id="filter-wrapper">
 					<div class="filter-column">
-						<h1 class="custom-search-heading">Categories</h1>
-						<ul class="custom-search">
-							<label><li><input type="checkbox" value="strategy" class="category-option"><span>Strategy</span></li></label>
-							<label><li><input type="checkbox" value="content" class="category-option"><span>Content</span></li></label>
-							<label><li><input type="checkbox" value="misc" class="category-option"><span>Misc</span></li></label>
-						</ul>
+						<div class="small-column">
+							<h1 class="custom-search-heading"><i class="filter-icon fa fa-plus-square-o" aria-hidden="true"></i><i class="filter-icon fa fa-minus-square-o" aria-hidden="true" style="display: none;"></i>Categories</h1>
+							<ul class="custom-search">
+								<label><li><input type="checkbox" value="strategy" class="category-option"><span>Strategy</span></li></label>
+								<label><li><input type="checkbox" value="content" class="category-option"><span>Content</span></li></label>
+								<label><li><input type="checkbox" value="misc" class="category-option"><span>Misc</span></li></label>
+							</ul>
+						</div>
 <!-- 					</div>
 					<div class="filter-column"> -->
-					<br>
-						<h1 class="custom-search-heading">Types</h1>
-						<ul class="custom-search">
-							{% for type in types %}
-								<label><li><input type="checkbox" value="{{type.id}}"class="type-option"><span>{{type.name|capfirst}}</span></li></label>
-							{% endfor %}
-						</ul>
+						<div class="small-column">
+							<h1 class="custom-search-heading"><i class="filter-icon fa fa-plus-square-o" aria-hidden="true"></i><i class="filter-icon fa fa-minus-square-o" aria-hidden="true" style="display: none;"></i>Types</h1>
+							<ul class="custom-search">
+								{% for type in types %}
+									<label><li><input type="checkbox" value="{{type.id}}" class="type-option"><span>{{type.name|capfirst}}</span></li></label>
+								{% endfor %}
+							</ul>
+						</div>
 					</div>
 					<div class="filter-column">
-						<h1 class="custom-search-heading">Tags</h1>
+						<h1 class="custom-search-heading"><i class="filter-icon fa fa-plus-square-o" aria-hidden="true"></i><i class="filter-icon fa fa-minus-square-o" aria-hidden="true" style="display: none;"></i>Tags</h1>
 						<ul class="custom-search two-column">
 							{% for tag in tags %}
 								<label><li><input type="checkbox" value="{{tag.id}}"class="tag-option"><span>{{tag.name}}</span></li></label>
@@ -56,7 +59,7 @@
 						</ul>
 					</div>
 					<div class="filter-column">
-						<h1 class="custom-search-heading">Authors</h1>
+						<h1 class="custom-search-heading"><i class="filter-icon fa fa-plus-square-o" aria-hidden="true"></i><i class="filter-icon fa fa-minus-square-o" aria-hidden="true" style="display: none;"></i>Authors</h1>
 						<ul class="custom-search two-column">
 							{% for author in authors %}
 								<label><li><input type="checkbox" value="{{author.id}}" class="author-option"><span>{{author.name}}</span></li></label>
@@ -130,7 +133,7 @@
 		    	{% endblock content %}
 		</div>
 		<div class="footer">
-			Having issues? Want to request a feature? Please reach out to Raluca at <a href="mailto:ralucavacaru05@gmail.com">ralucavacaru05@gmail.com.</a> She will put it on her to-do list. But in the meantime, know this - this website is designed, built and maintained by only one person. While she is eager to make it better, there’s only so much she can do on her own. So relax, have a cup of tea, and make sure you use Chrome - this website is optimised for it.
+			Having issues? Want to request a feature? Please reach out to Raluca at <a href="mailto:ralucavacaru05@gmail.com">ralucavacaru05@gmail.com.</a> She will put it on her to-do list.
 			<br><br>
 			&copy; 2017 Raluca-Ioana Vacaru
 		</div>

@@ -41,6 +41,9 @@ $(document).ready(function() {
   		$(".mob-menu-blurred").toggle('fade');
 	});
 
+	// responsive filtering
+	$("")
+
 	// custom search URL build-up
 	$("#custom-search-submit").click(function() {
 		categories = $('.category-option:checked').map(function() {
@@ -83,7 +86,7 @@ $(document).ready(function() {
 
 	var fixFilters = $('.scroll-then-fix-filter')
   	$(document).scroll(function() {
-		if ( $(this).scrollTop() >= 115 ) {
+		if ( $(this).scrollTop() >= 115 && $(window).width() >= 960 ) {
 			fixFilters.addClass('fix-to-top-filter')
 		}
 		else {
@@ -91,9 +94,15 @@ $(document).ready(function() {
 		}
 	})
 
-	var fixed = document.getElementById('custom-search-options');
-	fixed.addEventListener('touchmove', function(e) {
-	        e.preventDefault();
-	}, false);
+	// var fixed = document.getElementById('custom-search-options');
+	// fixed.addEventListener('touchmove', function(e) {
+	//         e.preventDefault();
+	// }, false);
+
+	$('.custom-search-heading').click(function () {
+		$(this).siblings(".custom-search").slideToggle();
+		$(this).children(".fa-plus-square-o").toggle();
+		$(this).children(".fa-minus-square-o").toggle();
+	});
 });
 

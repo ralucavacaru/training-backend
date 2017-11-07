@@ -8,7 +8,7 @@ from tplatform.models import Author
 from tplatform.models import Type
 
 def index(request):
-	articles = Article.objects.all()
+	# articles = Article.objects.all()
 	return render(request, 'tplatform/index.html', {}, context_instance = RequestContext(request))
 
 def article_detail(request, id):
@@ -49,14 +49,8 @@ def filter_detail(request, category, tags, types, authors):
 		authors_list = [int(i) for i in authors.split('&')]
 		articles = [x for x in aux if (set([y.id for y in x.authors.all()]) & set(authors_list))]
 	
-	all_tags = [x for x in Tag.objects.all().order_by('name') if x.article_set.all().exists()]
-	all_authors = [x for x in Author.objects.all().order_by('name') if x.article_set.all().exists()]
-	all_types = Type.objects.all().order_by('name');
 	return render(request, 'tplatform/filter_detail.html', {
 		'articles': articles,
-		'tags': all_tags,
-		'authors': all_authors,
-		'types': all_types,
 	}, context_instance = RequestContext(request))
 
 def trainers(request):
