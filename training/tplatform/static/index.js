@@ -16,15 +16,11 @@ $(document).ready(function() {
 	// custom search
 	$(".custom-search-button").click(function(){
 	    $("#custom-search-options").toggle('fade');
-	    // $('.blurred').toggle('fade');
+	    $(".everything-wrapper").toggleClass('noscroll');
 	});
 	$("#close-box").click(function(){
 	    $("#custom-search-options").toggle('fade');
-	    // $('.blurred').toggle('fade');
-	});
-	$(".blurred").click(function(){
-	    $("#custom-search-options").toggle('fade');
-	    // $('.blurred').toggle('fade');
+	    $(".everything-wrapper").toggleClass('noscroll');
 	});
 
 	// mobile menu

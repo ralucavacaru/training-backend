@@ -727,6 +727,9 @@ input[type="checkbox"]:checked+span {
   		overflow-y: scroll;
   		border: none;
   	}
+  	.noscroll {
+		overflow: hidden;
+	}
   	.filter-icon {
   		margin-right: 8px;
   	}
