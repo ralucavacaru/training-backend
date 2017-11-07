@@ -23,44 +23,48 @@
 		<div class="everything-wrapper">
 			<div class="blurred"></div>
 			<div class="mob-menu-blurred"></div>
-			<div id="custom-search-options">
-				<i class="fa fa-times fa-lg" id="close-box"></i>
+
+			<div id="custom-search-options" class="scroll-then-fix-filter">
+				<img src="/static/img/close.png" id="close-box">
+				<h1 id="filters-title">
+				Custom Filters
+				</h1>
 				<div id="filter-wrapper">
 					<div class="filter-column">
 						<h1 class="custom-search-heading">Categories</h1>
 						<ul class="custom-search">
-							<li><input type="checkbox" value="strategy" class="category-option">Strategy</li>
-							<li><input type="checkbox" value="content" class="category-option">Content</li>
-							<li><input type="checkbox" value="misc" class="category-option">Misc</li>
+							<label><li><input type="checkbox" value="strategy" class="category-option"><span>Strategy</span></li></label>
+							<label><li><input type="checkbox" value="content" class="category-option"><span>Content</span></li></label>
+							<label><li><input type="checkbox" value="misc" class="category-option"><span>Misc</span></li></label>
 						</ul>
-					</div>
-					<div class="filter-column">
-						<h1 class="custom-search-heading" style="margin-top: 15px !important;">Types</h1>
+<!-- 					</div>
+					<div class="filter-column"> -->
+					<br>
+						<h1 class="custom-search-heading">Types</h1>
 						<ul class="custom-search">
 							{% for type in types %}
-								<li><input type="checkbox" value="{{type.id}}"class="type-option">{{type.name|capfirst}}</li>
+								<label><li><input type="checkbox" value="{{type.id}}"class="type-option"><span>{{type.name|capfirst}}</span></li></label>
 							{% endfor %}
 						</ul>
 					</div>
 					<div class="filter-column">
 						<h1 class="custom-search-heading">Tags</h1>
-						<ul class="custom-search">
+						<ul class="custom-search two-column">
 							{% for tag in tags %}
-								<li><input type="checkbox" value="{{tag.id}}"class="tag-option">{{tag.name}}</li>
+								<label><li><input type="checkbox" value="{{tag.id}}"class="tag-option"><span>{{tag.name}}</span></li></label>
 							{% endfor %}
 						</ul>
 					</div>
 					<div class="filter-column">
 						<h1 class="custom-search-heading">Authors</h1>
-						<ul class="custom-search">
+						<ul class="custom-search two-column">
 							{% for author in authors %}
-								<li><input type="checkbox" value="{{author.id}}" class="author-option">{{author.name}}</li>
+								<label><li><input type="checkbox" value="{{author.id}}" class="author-option"><span>{{author.name}}</span></li></label>
 							{% endfor %}
 						</ul>
 					</div>
-					
-					<button id="custom-search-submit">Filter</button>
 				</div>
+				<button id="custom-search-submit">Filter</button>
 			</div>
 			<div class="header-placeholder">
 				<div id="header" class="scroll-then-fix">
