@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="website-content">
-
-</div>
-
+	<div id="website-content">
+		<a href="{% url 'contact.request_training' %}">Request training</a>
+		<a href="{% url 'contact.request_resources' %}">Request resources</a>
+		<a href="{% url 'contact.send_feedback' %}">Send us feedback</a>
+		<a href="{% url 'contact.join_team' %}">Join our training team</a>
+	</div>
 {% endblock content %}

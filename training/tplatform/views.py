@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from django.http import Http404
 from django.template import RequestContext
+from tplatform.forms import *
+from django.core.mail import EmailMessage
+from django.shortcuts import redirect
+from django.template import Context
+from django.template.loader import get_template
 
 from tplatform.models import Article
 from tplatform.models import Tag
@@ -72,4 +77,194 @@ def trainer_detail(request, id):
 	}, context_instance = RequestContext(request))
 
 def contact(request):
-	return render(request, 'tplatform/contact_us.html', {}, context_instance = RequestContext(request))
+	return render(request, 'tplatform/contact_us.html', {
+		}, context_instance = RequestContext(request))
+
+# Setting up email server: https://hellowebbooks.com/news/tutorial-setting-up-a-contact-form-with-django/
+def request_training(request):
+	form_class = RequestTrainingForm
+
+	if request.method == 'POST':
+		form = form_class(data=request.POST)
+
+		if form.is_valid():
+			contact_name = request.POST.get(
+				'contact_name'
+			, '')
+			contact_email = request.POST.get(
+				'contact_email'
+			, '')
+			institution = request.POST.get(
+				'institution'
+			, '')
+			country = request.POST.get(
+				'country'
+			, '')
+			form_content = request.POST.get('content', '')
+
+			# Email the profile with the 
+			# contact information
+			template = get_template('contact_template.txt')
+			context = Context({
+				'contact_name': contact_name,
+				'contact_email': contact_email,
+				'institution': institution,
+				'country': country,
+				'form_content': form_content,
+			})
+			content = template.render(context)
+
+			email = EmailMessage(
+				"Training Request",
+				content,
+				"Your website" +'',
+				['youremail@gmail.com'],
+				headers = {'Reply-To': contact_email }
+			)
+			email.send()
+			return redirect('contact')
+
+	return render(request, 'tplatform/request_training.html', {
+		'form': form_class,
+	}, context_instance = RequestContext(request))
+
+def request_resources(request):
+	form_class = RequestResourcesForm
+
+	if request.method == 'POST':
+		form = form_class(data=request.POST)
+
+		if form.is_valid():
+			contact_name = request.POST.get(
+				'contact_name'
+			, '')
+			contact_email = request.POST.get(
+				'contact_email'
+			, '')
+			institution = request.POST.get(
+				'institution'
+			, '')
+			country = request.POST.get(
+				'country'
+			, '')
+			form_content = request.POST.get('content', '')
+
+			# Email the profile with the 
+			# contact information
+			template = get_template('contact_template.txt')
+			context = Context({
+				'contact_name': contact_name,
+				'contact_email': contact_email,
+				'institution': institution,
+				'country': country,
+				'form_content': form_content,
+			})
+			content = template.render(context)
+
+			email = EmailMessage(
+				"Resource Request",
+				content,
+				"Your website" +'',
+				['youremail@gmail.com'],
+				headers = {'Reply-To': contact_email }
+			)
+			email.send()
+			return redirect('contact')
+
+	return render(request, 'tplatform/request_resources.html', {
+		'form': form_class,
+	}, context_instance = RequestContext(request))
+
+def send_feedback(request):
+	form_class = FeedbackForm
+
+	if request.method == 'POST':
+		form = form_class(data=request.POST)
+
+		if form.is_valid():
+			contact_name = request.POST.get(
+				'contact_name'
+			, '')
+			contact_email = request.POST.get(
+				'contact_email'
+			, '')
+			institution = request.POST.get(
+				'institution'
+			, '')
+			country = request.POST.get(
+				'country'
+			, '')
+			form_content = request.POST.get('content', '')
+
+			# Email the profile with the 
+			# contact information
+			template = get_template('contact_template.txt')
+			context = Context({
+				'contact_name': contact_name,
+				'contact_email': contact_email,
+				'institution': institution,
+				'country': country,
+				'form_content': form_content,
+			})
+			content = template.render(context)
+
+			email = EmailMessage(
+				"Training Feedback",
+				content,
+				"Your website" +'',
+				['youremail@gmail.com'],
+				headers = {'Reply-To': contact_email }
+			)
+			email.send()
+			return redirect('contact')
+
+	return render(request, 'tplatform/send_feedback.html', {
+		'form': form_class,
+	}, context_instance = RequestContext(request))
+
+def join_team(request):
+	form_class = JoinForm
+
+	if request.method == 'POST':
+		form = form_class(data=request.POST)
+
+		if form.is_valid():
+			contact_name = request.POST.get(
+				'contact_name'
+			, '')
+			contact_email = request.POST.get(
+				'contact_email'
+			, '')
+			institution = request.POST.get(
+				'institution'
+			, '')
+			country = request.POST.get(
+				'country'
+			, '')
+			form_content = request.POST.get('content', '')
+
+			# Email the profile with the 
+			# contact information
+			template = get_template('contact_template.txt')
+			context = Context({
+				'contact_name': contact_name,
+				'contact_email': contact_email,
+				'institution': institution,
+				'country': country,
+				'form_content': form_content,
+			})
+			content = template.render(context)
+
+			email = EmailMessage(
+				"Training Application",
+				content,
+				"Your website" +'',
+				['youremail@gmail.com'],
+				headers = {'Reply-To': contact_email }
+			)
+			email.send()
+			return redirect('contact')
+
+	return render(request, 'tplatform/join_team.html', {
+		'form': form_class,
+	}, context_instance = RequestContext(request))

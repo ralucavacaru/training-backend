@@ -1,0 +1,14 @@
+Contact Name:
+{{ contact_name }}
+
+Email:
+{{ contact_email }}
+
+Institution:
+{{ institution }}
+
+Country:
+{{ country }}
+
+Content:
+{{ form_content|safe|striptags }}
