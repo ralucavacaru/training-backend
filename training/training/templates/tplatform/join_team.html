@@ -2,11 +2,14 @@
 
 {% block content %}
 	<div id="website-content">
-		<h1>Join our training team</h1>
-		<form role="form" action="" method="post">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button type="submit">Submit</button>
-		</form>
+		<div class="form-wrapper">
+			<h1>Join our training team</h1>
+			<p>We are always looking for keen and talented debaters, judges and trainers  to join our Training Team. You don’t need to have any specific achievements or come from any specific region. You also don’t need to commit to any specific availability - we will add you to a Facebook group and keep you updated as opportunities arise. As long as you can run a workshop or help us with some written resources every few months, we’d love to have you!</p>
+			<form role="form" action="" method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit">Submit</button>
+			</form>
+		</div>
 	</div>
 {% endblock %}

@@ -85,7 +85,7 @@
 						<a href="{% url 'trainers' %}" id="trainers" class="{% if 'trainers' in request.resolver_match.url_name %}active{% endif %}">
 							Trainers
 						</a>
-						<a href="{% url 'contact' %}" id="contact" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+						<a href="{% url 'contact' %}" id="contact" class="{% if 'contact' in request.resolver_match.url_name %}active{% endif %}">
 							Contact Us
 						</a>
 					</nav>
@@ -124,7 +124,7 @@
 					<a href="{% url 'trainers' %}" id="trainers" class="{% if 'trainers' in request.resolver_match.url_name %}active{% endif %}">
 						Trainers
 					</a>
-					<a href="{% url 'contact' %}" id="contact" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+					<a href="{% url 'contact' %}" id="contact" class="{% if 'contact' in request.resolver_match.url_name %}active{% endif %}">
 						Contact Us
 					</a>
 			    </nav>
@@ -133,8 +133,6 @@
 		    	{% endblock content %}
 		</div>
 		<div class="footer">
-			Having issues? Want to request a feature? Please reach out to Raluca at <a href="mailto:ralucavacaru05@gmail.com">ralucavacaru05@gmail.com.</a> She will put it on her to-do list.
-			<br><br>
 			&copy; 2017 Raluca-Ioana Vacaru
 		</div>
 	</body>

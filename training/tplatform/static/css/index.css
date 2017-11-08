@@ -677,6 +677,217 @@ input[type="checkbox"]:checked+span {
 	display: none;
 }
 
+
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Home page theme */
+
+.green-background {
+	background-color: #558B6E;
+	color: white;
+}
+.red-background {
+	background-color: #A86464;
+	color: white;
+}
+.blue-background {
+	background-color: #648EAA;
+	color: white;
+}
+.grey-background {
+	background-color: rgba(54, 54, 54, 0.9);
+	color: white;
+}
+
+/* Home page */
+
+.homepage-wrapper a {
+	color: #dddbde;
+	text-decoration: none;
+}
+
+.homepage-wrapper {
+	/*top: 150px;*/
+	text-align: center;
+	/*position: absolute;*/
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    left: 0;
+}
+.homepage-card {
+	padding: 10% 20%;
+	font-size: 18px;
+}
+.homepage-welcome-card {
+	background-image: url('../img/scotland-blurred-50.png');
+	color: white;
+}
+.homepage-welcome-card p {
+	font-size: 18px;
+}
+.attention {
+	font-weight: bold;
+	font-size: 24px;
+	color: red;
+}
+
+/* Footer */
+
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.everything-wrapper {
+  flex: 1;
+}
+
+.footer {
+	text-align: center;
+  	background-color: rgba(54, 54, 54, 0.9);
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: white;
+	padding: 2em 4em;
+	font-size: 14px;
+}
+.footer a {
+	color: #dddbde;
+	text-decoration: none;
+}
+
+
+/* Contact page */
+
+.contact-page {
+	margin: 0 5%;
+}
+
+.contact-page h1 {
+	width: 100%;
+	text-align: center;
+}
+
+.contact-options {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.contact-options a {
+	position: relative;
+	width: 45%;
+	background-color: #CECECE;
+	padding: 0 20px 20px;
+	margin: 10px;
+	box-sizing: border-box;
+	border-radius: 3px;
+	max-width: 500px;
+}
+
+.contact-options i {
+	font-size: 30px;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	color: #494949;
+}
+
+/* Forms */
+
+.form-wrapper {
+	width: 50%;
+	margin-left: 25%;
+}
+
+.form-wrapper h1 {
+	text-align: center;
+}
+
+.form-wrapper p {
+	text-align: justify;
+}
+
+.form-wrapper form p {
+	text-align: left;
+	font-family: 'Pavanam', sans-serif;
+	margin: 20px 0;
+}
+
+.form-wrapper input[type=text],
+.form-wrapper input[type=email] {
+	padding: 5px;
+	border: none;
+	border-bottom: 1px solid black;
+	background-color: unset;
+	border-radius: 0;
+}
+
+.form-wrapper input[type=text]:focus,
+.form-wrapper input[type=email]:focus {
+	border-bottom: 2px solid #558B6E;
+	outline: none;
+}
+
+.form-wrapper textarea {
+	width: 100%;
+	border: 1px solid black;
+	border-radius: 0;
+}
+
+.form-wrapper textarea:focus {
+	width: 100%;
+	border: 2px solid #558B6E;
+	outline: none;
+}
+
+.form-wrapper input, select, textarea {
+	font-size: 18px;
+	font-family: 'Pavanam', sans-serif;
+}
+
+.form-wrapper input:focus, select, textarea {
+	color: #558B6E;
+}
+
+.form-wrapper button {
+	position: relative;
+	display: block;
+	margin-left: calc(50% - 40px);
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 80px;
+	height: 31px;
+	border-radius: 3px;
+	border-color: #558B6E;
+	box-shadow: none;
+	background-color: #558B6E;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: white;
+	font-size: 18px;
+	border: none;
+}
+
+
+
+
 /**************** Media screen detection ****************/
 
 /* For most mobile devices, including tablets */
@@ -830,7 +1041,23 @@ input[type="checkbox"]:checked+span {
 	    background-color: rgba(54, 54, 54, 0.9);
 	    color: #f4f3f4;
 	}
+
+	.form-wrapper {
+		width: 80%;
+		margin-left: 10%;
+	}
 }
+
+@media screen and (max-width: 600px) {
+	.contact-options {
+		display: flex;
+	}
+	.contact-options a {
+		display: block;
+		width: 100% !important;
+	}
+}
+
 /* For smaller screens such as the iPhone 5 */
 @media screen and (max-width: 350px) {
 	.content-box {
@@ -864,95 +1091,16 @@ input[type="checkbox"]:checked+span {
 	}
 }
 
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 35px;
-    height: 0;
-    overflow: hidden;
-}
-.video-container iframe {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Home page theme */
-
-.green-background {
-	background-color: #558B6E;
-	color: white;
-}
-.red-background {
-	background-color: #A86464;
-	color: white;
-}
-.blue-background {
-	background-color: #648EAA;
-	color: white;
-}
-.grey-background {
-	background-color: rgba(54, 54, 54, 0.9);
-	color: white;
-}
-
-/* Home page */
-
-.homepage-wrapper a {
-	color: #dddbde;
-	text-decoration: none;
-}
-
-.homepage-wrapper {
-	/*top: 150px;*/
-	text-align: center;
-	/*position: absolute;*/
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    left: 0;
-}
-.homepage-card {
-	padding: 10% 20%;
-	font-size: 18px;
-}
-.homepage-welcome-card {
-	background-image: url('../img/scotland-blurred-50.png');
-	color: white;
-}
-.homepage-welcome-card p {
-	font-size: 18px;
-}
-.attention {
-	font-weight: bold;
-	font-size: 24px;
-	color: red;
-}
-
-/* Footer */
 
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
 
-.everything-wrapper {
-  flex: 1;
-}
 
-.footer {
-	text-align: center;
-  	background-color: rgba(54, 54, 54, 0.9);
-	font-family: 'Open Sans Condensed', sans-serif;
-	color: white;
-	padding: 2em 4em;
-	font-size: 14px;
-}
-.footer a {
-	color: #dddbde;
-	text-decoration: none;
-}
+
+
+
+
+
+
+
+
+

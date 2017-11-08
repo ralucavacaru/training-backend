@@ -2,9 +2,38 @@
 
 {% block content %}
 	<div id="website-content">
-		<a href="{% url 'contact.request_training' %}">Request training</a>
-		<a href="{% url 'contact.request_resources' %}">Request resources</a>
-		<a href="{% url 'contact.send_feedback' %}">Send us feedback</a>
-		<a href="{% url 'contact.join_team' %}">Join our training team</a>
+		<div class="contact-page">
+			<h1>Contact us</h1>
+			<div class="contact-options">
+				<a href="{% url 'contact.request_training' %}">
+					<h2>Request training</h2>
+					<div class="contact-description">
+						<p>Do you think you could benefit from a few training sessions over Skype? Are you trying to set up a training weekend or competition in your city? Or maybe workshops are not for you, but you want a top-class debater to judge some of your debates online and send you feedback? Whatever you need, drop us a line and we will set up a date and time with you!</p>
+					</div>
+					<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+				</a>
+				<a href="{% url 'contact.request_resources' %}">
+					<h2>Request resources</h2>
+					<div class="contact-description">
+						<p>Are we missing videos or documents that you would find useful? We will always seek to continue developing our database of resources, so please let us know if you want us to cover something in particular and we will see what we can do.</p>
+					</div>
+					<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+				</a>
+				<a href="{% url 'contact.send_feedback' %}">
+					<h2>Send us feedback</h2>
+					<div class="contact-description">
+						<p>Do you have any thoughts on how the training centre could be even better? The process continues after we have run our workshops, so please  let us know - how did it go? If you have ideas, feedback, concerns, praise or criticism, we always want to hear it so we can develop our training.</p>
+					</div>
+					<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+				</a>
+				<a href="{% url 'contact.join_team' %}">
+					<h2>Join our training team</h2>
+					<div class="contact-description">
+						<p>We are always looking for keen and talented debaters, judges and trainers  to join our Training Team. You don’t need to have any specific achievements or come from any specific region. You also don’t need to commit to any specific availability - we will add you to a Facebook group and keep you updated as opportunities arise. As long as you can run a workshop or help us with some written resources every few months, we’d love to have you!</p>
+					</div>
+					<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+				</a>
+			</div>
+		</div>
 	</div>
 {% endblock content %}

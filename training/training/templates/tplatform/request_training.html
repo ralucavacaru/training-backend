@@ -2,11 +2,14 @@
 
 {% block content %}
 	<div id="website-content">
-		<h1>Request training</h1>
-		<form role="form" action="" method="post">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button type="submit">Submit</button>
-		</form>
+		<div class="form-wrapper">
+			<h1>Request training</h1>
+			<p>Do you think you could benefit from a few training sessions over Skype? Are you trying to set up a training weekend or competition in your city? Or maybe workshops are not for you, but you want a top-class debater to judge some of your debates online and send you feedback? Whatever you need, drop us a line and we will set up a date and time with you!</p>
+			<form role="form" action="" method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit">Submit</button>
+			</form>
+		</div>
 	</div>
 {% endblock %}

@@ -2,11 +2,14 @@
 
 {% block content %}
 	<div id="website-content">
-		<h1>Request resources</h1>
-		<form role="form" action="" method="post">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button type="submit">Submit</button>
-		</form>
+		<div class="form-wrapper">
+			<h1>Request resources</h1>
+			<p>Are we missing videos or documents that you would find useful? We will always seek to continue developing our database of resources, so please let us know if you want us to cover something in particular and we will see what we can do.</p>
+			<form role="form" action="" method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit">Submit</button>
+			</form>
+		</div>
 	</div>
 {% endblock %}

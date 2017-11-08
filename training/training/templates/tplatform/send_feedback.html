@@ -2,11 +2,14 @@
 
 {% block content %}
 	<div id="website-content">
-		<h1>Send feedback</h1>
-		<form role="form" action="" method="post">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button type="submit">Submit</button>
-		</form>
+		<div class="form-wrapper">
+			<h1>Send feedback</h1>
+			<p>Do you have any thoughts on how the training centre could be even better? The process continues after we have run our workshops, so please  let us know - how did it go? If you have ideas, feedback, concerns, praise or criticism, we always want to hear it so we can develop our training.</p>
+			<form role="form" action="" method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit">Submit</button>
+			</form>
+		</div>
 	</div>
 {% endblock %}
