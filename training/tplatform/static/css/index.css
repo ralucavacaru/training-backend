@@ -885,7 +885,9 @@ body {
 	border: none;
 }
 
-
+.highlight {
+	color: #648EAA;
+}
 
 
 /**************** Media screen detection ****************/
