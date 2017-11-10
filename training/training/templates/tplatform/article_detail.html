@@ -17,11 +17,13 @@
 		</ul>
 	</div>
 
-	<div class="article-content"> 
+	<div class="article-content {{ article.get_category_display|lower }}-headings"> 
 		<div class="article-title-wrapper">
 			<h1 class="article-title" id="{{ article.get_category_display|lower }}">{{ article.title|capfirst }}</h1>
 			<span class="box-tag-list">
-				{{ article.tags.all|sort_alphabetically:"name"|join:", " }}
+				Written by: {{ article.authors.all|sort_alphabetically:"name"|join:", " }}
+				<br>
+				Tags: {{ article.tags.all|sort_alphabetically:"name"|join:", " }}
 				<br><i>{{ article.date_added }}</i>
 			</span>
 		</div>

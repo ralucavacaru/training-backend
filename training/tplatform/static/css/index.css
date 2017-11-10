@@ -902,6 +902,16 @@ body {
 	color: #648EAA;
 }
 
+.content-headings h1 {
+	color: #648EAA !important;
+}
+.strategy-headings h1 {
+	color: #558B6E !important;
+}
+.misc-headings h1 {
+	color: #A86464 !important;
+}
+
 
 /**************** Media screen detection ****************/
 
