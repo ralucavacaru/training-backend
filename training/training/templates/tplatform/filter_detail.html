@@ -6,8 +6,8 @@
 		{% for article in articles %}
 		<a class="flipper content-box-wrapper" href="{% url 'browse.article_detail' article.id %}">
 			<!-- FRONT -->
-			<div class="front">
-					<div class="content-box" id="article-{{ article.get_category_display|lower }}">
+			<div class="front content-box" id="article-{{ article.get_category_display|lower }}">
+					<!-- <div class="" > -->
 						<span class="box-title">{{ article.title }}</span>
 						<span class="box-author">
 							{% if article.authors.all|length == 1 %}
@@ -21,7 +21,7 @@
 								{{ article.tags.all|sort_alphabetically:"name"|join:"  |  " }}
 							</span>
 						</span>
-					</div>
+					<!-- </div> -->
 			</div>
 
 			<!-- BACK -->
