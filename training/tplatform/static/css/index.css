@@ -294,9 +294,10 @@ a {
 	list-style: none;
 	padding: 0;
 }
+
 .related h2 {
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	margin: 0;
 }
 .related .subtitle {
@@ -306,10 +307,22 @@ a {
 }
 .related li {
 	border-bottom-style: solid;
-	border-bottom-width: 5px !important;
+	border-bottom-width: 2px !important;
 	margin: 10px 0px;
-	padding: 10px 5px 5px 5px;
+	padding: 8px 5px 5px 5px;
 	border-radius: 3px;
+}
+
+.related li h2 {
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.related li h2:hover {
+	text-overflow: unset;
+    white-space: unset;
+    overflow: unset;
 }
 
 .article-content {
@@ -994,6 +1007,10 @@ body {
   	.article-authors-wrapper {
   		padding: 0;
   	}
+  	.mobile-related a {
+  		color: black;
+  		text-decoration: none;
+  	}
   	.mobile-related {
   		display: block;
   		border-top: 1px solid black;
@@ -1007,10 +1024,14 @@ body {
   	}
   	.mobile-related .related a li h2 {
   		font-size: 18px;
-  		padding: 10px;
+  		padding: 8px 5px 2px;
   		margin: 0;
   		text-align: center;
   		text-decoration: none !important;
+		text-overflow: unset;
+		white-space: unset;
+		overflow: unset;
+}
   	}
   	.mobile-related .related {
   		display: inline-block;

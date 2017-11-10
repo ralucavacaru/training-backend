@@ -6,7 +6,7 @@ from .models import Author
 from .models import Type
 
 class ArticleAdmin(admin.ModelAdmin):
-	list_display = ['id', 'title']
+	list_display = ['id', 'title', 'category', 'description']
 
 class TagAdmin(admin.ModelAdmin):
 	list_display = ['id', 'name']
