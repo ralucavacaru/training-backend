@@ -14,7 +14,7 @@ from tplatform.models import Type
 
 def index(request):
 	# articles = Article.objects.all()
-	return render(request, 'tplatform/index.html', {}, context_instance = RequestContext(request))
+	return render(request, 'tplatform/index.html', {})
 
 def article_detail(request, id):
 	try:
@@ -25,7 +25,7 @@ def article_detail(request, id):
 	return render(request, 'tplatform/article_detail.html', {
 		'article': article,
 		'related': related,
-	}, context_instance = RequestContext(request))
+	})
 
 def filter_detail(request, category, tags, types, authors):
 	all_articles = Article.objects.all().order_by('date_added').reverse()
@@ -56,13 +56,13 @@ def filter_detail(request, category, tags, types, authors):
 	
 	return render(request, 'tplatform/filter_detail.html', {
 		'articles': articles,
-	}, context_instance = RequestContext(request))
+	})
 
 def trainers(request):
 	trainers = Author.objects.order_by('name')
 	return render(request, 'tplatform/trainers.html', {
 		'trainers': trainers,
-	}, context_instance = RequestContext(request))
+	})
 
 def trainer_detail(request, id):
 	try:
@@ -78,7 +78,7 @@ def trainer_detail(request, id):
 
 def contact(request):
 	return render(request, 'tplatform/contact_us.html', {
-		}, context_instance = RequestContext(request))
+		})
 
 # Setting up email server: https://hellowebbooks.com/news/tutorial-setting-up-a-contact-form-with-django/
 def request_training(request):
@@ -126,7 +126,7 @@ def request_training(request):
 
 	return render(request, 'tplatform/request_training.html', {
 		'form': form_class,
-	}, context_instance = RequestContext(request))
+	})
 
 def request_resources(request):
 	form_class = RequestResourcesForm
@@ -173,7 +173,7 @@ def request_resources(request):
 
 	return render(request, 'tplatform/request_resources.html', {
 		'form': form_class,
-	}, context_instance = RequestContext(request))
+	})
 
 def send_feedback(request):
 	form_class = FeedbackForm
@@ -220,7 +220,7 @@ def send_feedback(request):
 
 	return render(request, 'tplatform/send_feedback.html', {
 		'form': form_class,
-	}, context_instance = RequestContext(request))
+	})
 
 def join_team(request):
 	form_class = JoinForm
@@ -267,4 +267,4 @@ def join_team(request):
 
 	return render(request, 'tplatform/join_team.html', {
 		'form': form_class,
-	}, context_instance = RequestContext(request))
+	})

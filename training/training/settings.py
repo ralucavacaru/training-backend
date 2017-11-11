@@ -49,8 +49,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django_mobile.middleware.MobileDetectionMiddleware',
-    'django_mobile.middleware.SetFlavourMiddleware',
+    # 'django_mobile.middleware.MobileDetectionMiddleware',
+    # 'django_mobile.middleware.SetFlavourMiddleware',
 )
 
 ROOT_URLCONF = 'training.urls'
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'training.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['training/templates'],
+        'DIRS': ['/home/ginger/training/training/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,13 +72,13 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATE_LOADERS = (
-    'django_mobile.loader.Loader',
-)
+# TEMPLATE_LOADERS = (
+#     'django_mobile.loader.Loader',
+# )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django_mobile.context_processors.flavour',
-)
+# TEMPLATE_CONTEXT_PROCESSORS = (
+#     'django_mobile.context_processors.flavour',
+# )
 
 WSGI_APPLICATION = 'training.wsgi.application'
 
