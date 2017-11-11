@@ -74,7 +74,7 @@ def trainer_detail(request, id):
 	return render(request, 'tplatform/trainer_detail.html', {
 		'trainer': trainer,
 		'articles': articles,
-	}, context_instance = RequestContext(request))
+	})
 
 def contact(request):
 	return render(request, 'tplatform/contact_us.html', {
