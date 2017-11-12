@@ -6,6 +6,7 @@ from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
+from django.core.mail import send_mail
 
 from tplatform.models import Article
 from tplatform.models import Tag
@@ -161,14 +162,7 @@ def request_resources(request):
 			})
 			content = template.render(context)
 
-			email = EmailMessage(
-				"Resource Request",
-				content,
-				"Your website" +'',
-				['youremail@gmail.com'],
-				headers = {'Reply-To': contact_email }
-			)
-			email.send()
+			send_mail('Resource Request', content, 'ralucavacaru05@gmail.com', ['ralucavacaru05@gmail.com'], fail_silently=False)
 			return redirect('contact')
 
 	return render(request, 'tplatform/request_resources.html', {

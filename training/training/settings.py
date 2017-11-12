@@ -58,7 +58,8 @@ ROOT_URLCONF = 'training.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/ginger/training/training/templates'],
+        # 'DIRS': ['/home/ginger/training/training/templates'],
+        'DIRS': ['training/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,8 +123,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Set-up for email server
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
-DEFAULT_FROM_EMAIL = 'testing@example.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False 
-EMAIL_PORT = 1025
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'ralucavacaru'
+EMAIL_HOST_PASSWORD = 'TOg56Bss'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
