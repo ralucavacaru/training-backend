@@ -122,7 +122,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Set-up for email server
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'ralucavacaru'
 EMAIL_HOST_PASSWORD = 'TOg56Bss'

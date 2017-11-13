@@ -162,7 +162,7 @@ def request_resources(request):
 			})
 			content = template.render(context)
 
-			send_mail('Resource Request', content, 'ralucavacaru05@gmail.com', ['ralucavacaru05@gmail.com'], fail_silently=False)
+			send_mail('Resource Request', content, 'raluca_vacaru@yahoo.com', ['ralucavacaru05@gmail.com'], fail_silently=False)
 			return redirect('contact')
 
 	return render(request, 'tplatform/request_resources.html', {
