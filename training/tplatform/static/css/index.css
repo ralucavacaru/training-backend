@@ -916,6 +916,35 @@ body {
 
 /**************** Media screen detection ****************/
 
+/* Normal screen */
+@media screen and (min-width: 960px) {
+	#box-wrapper {
+		float: right;
+	}
+	.burger-icon {
+		display: none;
+	}
+	#mobile-header {
+		display: none;
+	}
+	.filter-icon {
+		display: none;
+	}
+
+	.custom-search-button {
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+		margin-top: 40px;
+		cursor: pointer;
+		color: rgba(54, 54, 54, 0.9);
+	}
+	.custom-search-button:hover {
+		color: black;
+	}
+}
+
 /* For most mobile devices, including tablets */
 @media screen and (max-width: 960px) {
   	#browse-navbar { 
@@ -1091,7 +1120,6 @@ body {
 	}
 }
 
-/* For smaller screens such as the iPhone 5 */
 @media screen and (max-width: 350px) {
 	.content-box {
 		width: 250px;
@@ -1107,21 +1135,6 @@ body {
   	.trainer-detail-wrapper img {
   		margin-left: 0;
   	}
-}
-/* Normal screen */
-@media screen and (min-width: 960px) {
-	#box-wrapper {
-		float: right;
-	}
-	.burger-icon {
-		display: none;
-	}
-	#mobile-header {
-		display: none;
-	}
-	.filter-icon {
-		display: none;
-	}
 }
 
 

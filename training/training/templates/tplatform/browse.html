@@ -3,6 +3,9 @@
 {% block content %}
 <div id="website-content">
 		<nav id="browse-navbar" class="scroll-then-fix-sidebar">
+			
+
+
 			<a href="/browse/filter/category=/tags=/types=/authors=/" id="sidebar-all" class="{% if request.resolver_match.url_name == 'browse' %}active{% endif %}">
 				All
 			</a>
@@ -15,9 +18,10 @@
 			<a href="{% url 'browse.filter_detail' 'misc' '' '' '' %}" id="sidebar-misc" class="{% if request.resolver_match.url_name == 'browse.misc' %}active{% endif %}">
 				Development
 			</a>
-			<a id="sidebar-all" class="custom-search-button">
-				Custom Search
-			</a>
+
+			<div class="custom-search-button">
+				<i class="fa fa-sliders" aria-hidden="true"></i>  Custom Filter
+			</div>
 		</nav>
 		<div id="box-wrapper">
 			<!-- Injected Content -->
