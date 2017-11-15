@@ -749,6 +749,7 @@ input[type="checkbox"]:checked+span {
 }
 .homepage-welcome-card {
 	background-image: url('../img/scotland-blurred-50.png');
+	background-size: cover;
 	color: white;
 }
 .homepage-welcome-card p {
