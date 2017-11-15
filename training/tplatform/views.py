@@ -3,6 +3,7 @@ from django.http import Http404
 from django.template import RequestContext
 from tplatform.forms import *
 from django.core.mail import EmailMessage
+from django.core.mail import send_mail
 from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
@@ -105,23 +106,16 @@ def request_training(request):
 			# Email the profile with the 
 			# contact information
 			template = get_template('contact_template.txt')
-			context = Context({
+			context = {
 				'contact_name': contact_name,
 				'contact_email': contact_email,
 				'institution': institution,
 				'country': country,
 				'form_content': form_content,
-			})
+			}
 			content = template.render(context)
 
-			email = EmailMessage(
-				"Training Request",
-				content,
-				"Your website" +'',
-				['youremail@gmail.com'],
-				headers = {'Reply-To': contact_email }
-			)
-			email.send()
+			send_mail('Training Request', content, 'ralucavacaru05@gmail.com', ['ca@scottisheudc2018.com'], fail_silently=False)
 			return redirect('contact')
 
 	return render(request, 'tplatform/request_training.html', {
@@ -152,24 +146,17 @@ def request_resources(request):
 			# Email the profile with the 
 			# contact information
 			template = get_template('contact_template.txt')
-			context = Context({
-				'contact_name': contact_name,
-				'contact_email': contact_email,
-				'institution': institution,
-				'country': country,
-				'form_content': form_content,
-			})
-			content = template.render(context)
+			context = {
+                                'contact_name': contact_name,
+                                'contact_email': contact_email,
+                                'institution': institution,
+                                'country': country,
+                                'form_content': form_content,
+                        }
+                        content = template.render(context)
 
-			email = EmailMessage(
-				"Resource Request",
-				content,
-				"Your website" +'',
-				['youremail@gmail.com'],
-				headers = {'Reply-To': contact_email }
-			)
-			email.send()
-			return redirect('contact')
+                        send_mail('Resource Request', content, 'ralucavacaru05@gmail.com', ['ca@scottisheudc2018.com'], fail_silently=False)
+                        return redirect('contact')
 
 	return render(request, 'tplatform/request_resources.html', {
 		'form': form_class,
@@ -199,24 +186,18 @@ def send_feedback(request):
 			# Email the profile with the 
 			# contact information
 			template = get_template('contact_template.txt')
-			context = Context({
-				'contact_name': contact_name,
-				'contact_email': contact_email,
-				'institution': institution,
-				'country': country,
-				'form_content': form_content,
-			})
-			content = template.render(context)
 
-			email = EmailMessage(
-				"Training Feedback",
-				content,
-				"Your website" +'',
-				['youremail@gmail.com'],
-				headers = {'Reply-To': contact_email }
-			)
-			email.send()
-			return redirect('contact')
+			context = {
+                                'contact_name': contact_name,
+                                'contact_email': contact_email,
+                                'institution': institution,
+                                'country': country,
+                                'form_content': form_content,
+                        }
+                        content = template.render(context)
+
+                        send_mail('Training Feedback', content, 'ralucavacaru05@gmail.com', ['ca@scottisheudc2018.com'], fail_silently=False)
+                        return redirect('contact')
 
 	return render(request, 'tplatform/send_feedback.html', {
 		'form': form_class,
@@ -246,24 +227,17 @@ def join_team(request):
 			# Email the profile with the 
 			# contact information
 			template = get_template('contact_template.txt')
-			context = Context({
-				'contact_name': contact_name,
-				'contact_email': contact_email,
-				'institution': institution,
-				'country': country,
-				'form_content': form_content,
-			})
-			content = template.render(context)
+			context = {
+                                'contact_name': contact_name,
+                                'contact_email': contact_email,
+                                'institution': institution,
+                                'country': country,
+                                'form_content': form_content,
+                        }
+                        content = template.render(context)
 
-			email = EmailMessage(
-				"Training Application",
-				content,
-				"Your website" +'',
-				['youremail@gmail.com'],
-				headers = {'Reply-To': contact_email }
-			)
-			email.send()
-			return redirect('contact')
+                        send_mail('Training Application', content, 'ralucavacaru05@gmail.com', ['ca@scottisheudc2018.com'], fail_silently=False)
+                        return redirect('contact')
 
 	return render(request, 'tplatform/join_team.html', {
 		'form': form_class,
